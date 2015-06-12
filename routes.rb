@@ -3,7 +3,7 @@ require 'rubygems'
 require 'haml'
 require_relative 'cache'
 
-class Server < Sinatra::Base
+class Routes < Sinatra::Base
 
   get '/upload' do
     erb :form
@@ -21,5 +21,3 @@ class Server < Sinatra::Base
   end
 
 end
-
-Server.run!
