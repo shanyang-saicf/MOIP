@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
 
-  get 'upload' => 'file_upload#upload'
+  get 'file_upload/index'
 
-  post 'upload' => 'file_upload#upload'
+  get 'file_upload/new'
+
+  get 'file_upload/show'
+
+  get 'image/index'
+
+  get 'image/new'
+
+  get 'image/show'
+
+  post 'image/create'
+
+  post 'file_upload/create'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
