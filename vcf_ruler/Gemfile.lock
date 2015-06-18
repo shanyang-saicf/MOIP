@@ -217,7 +217,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  mongoid
+  mongoid (~> 4.0.0)
   mongoid-paperclip
   mongoid-rspec (~> 2.1.0)
   rails (= 4.2.1)
