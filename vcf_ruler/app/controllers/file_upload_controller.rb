@@ -13,6 +13,7 @@ class FileUploadController < ApplicationController
     if @fileupload.save
       redirect_to :action => :show, :id => @fileupload.id
     end
+    @file = Paperclip.io_adapters.for(@fileupload.fileupload).read
   end
 
 
