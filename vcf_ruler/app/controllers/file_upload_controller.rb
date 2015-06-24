@@ -1,4 +1,5 @@
 class FileUploadController < ApplicationController
+
   def index
   end
 
@@ -10,10 +11,10 @@ class FileUploadController < ApplicationController
 
   def create
     @fileupload = FileUpload.new( user_params )
-    if @fileupload.save
-      redirect_to :action => :show, :id => @fileupload.id
-    end
+    #@fileupload.save
     @file = Paperclip.io_adapters.for(@fileupload.fileupload).read
+    p @file
+    render nothing: true
   end
 
 
