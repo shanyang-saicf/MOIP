@@ -10,6 +10,8 @@ class FileUpload
   #before_save :contents_of_file_into_body
   #do_not_validate_attachment_file_type :fileupload
 
+
+
   def fileupload_contents
     #p @fileupload
     #p fileupload
