@@ -21,7 +21,7 @@ class FileUploadController < ApplicationController
     hashMap = []
     begin
       File.open(@file.path).each do |line|
-        if is_key(line)
+        if MetaKeyFactory.is_key(line)
           MetaKeyFactory.new.findModel(line)
         end
           #hashmap.store(MetaKey.new(line))
@@ -43,11 +43,4 @@ class FileUploadController < ApplicationController
     params.require(:fileupload).permit(:fileupload)
   end
 
-  def is_key(line)
-    if line.include? "##"
-      true
-    else
-      false
-    end
-  end
 end

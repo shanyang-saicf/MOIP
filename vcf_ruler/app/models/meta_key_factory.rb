@@ -1,6 +1,7 @@
 class MetaKeyFactory < MetaKey
   include Mongoid::Document
   include Mongoid::Paperclip
+  extend MetaKeyModule
 
 
   def findModel(line)
@@ -8,9 +9,9 @@ class MetaKeyFactory < MetaKey
     classString = "MetaKey" + classString.capitalize
     clazz = classString.classify.safe_constantize
     if !clazz.nil?
-      clazz.new.printKey(line)
+      clazz.new.parse(line)
     else
-      MetaKey.new.printKey(line)
+      MetaKey.new.parse(line)
     end
 
   end
