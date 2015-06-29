@@ -8,7 +8,9 @@ class MetaKeyFactory < MetaKey
     classString = "MetaKey" + classString.capitalize
     clazz = classString.classify.safe_constantize
     if !clazz.nil?
-      clazz.new.print(line)
+      clazz.new.printKey(line)
+    else
+      MetaKey.new.printKey(line)
     end
 
   end

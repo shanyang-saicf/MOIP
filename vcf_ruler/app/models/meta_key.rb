@@ -1,6 +1,6 @@
 class MetaKey
 
-  def print(line)
+  def printKey(line)
     p line
   end
 
