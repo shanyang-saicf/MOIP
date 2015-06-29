@@ -1,0 +1,3 @@
+class MetaKeyFormat < MetaKeyInfo
+
+end

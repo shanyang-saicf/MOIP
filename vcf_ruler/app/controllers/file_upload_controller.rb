@@ -1,4 +1,7 @@
+require 'csv'
+
 class FileUploadController < ApplicationController
+
 
   skip_before_filter :verify_authenticity_token
 
@@ -14,8 +17,22 @@ class FileUploadController < ApplicationController
   def create
     @fileupload = FileUpload.new( user_params )
     #@fileupload.save
-    @file = Paperclip.io_adapters.for(@fileupload.fileupload).read
-    p @file
+    @file = Paperclip.io_adapters.for(@fileupload.fileupload)
+    hashMap = []
+    begin
+      File.open(@file.path).each do |line|
+        if is_key(line)
+          MetaKeyFactory.new.findModel(line)
+        end
+          #hashmap.store(MetaKey.new(line))
+
+        #line.split("\t").each do | word |
+          #p word
+        #end
+      end
+    end
+    #fileData = File.open(@file.path).read
+    #p fileData
     render nothing: true
   end
 
@@ -24,5 +41,13 @@ class FileUploadController < ApplicationController
 
   def user_params
     params.require(:fileupload).permit(:fileupload)
+  end
+
+  def is_key(line)
+    if line.include? "##"
+      true
+    else
+      false
+    end
   end
 end
