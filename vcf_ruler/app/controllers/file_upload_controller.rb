@@ -20,12 +20,24 @@ class FileUploadController < ApplicationController
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
     hashMap = {}
     begin
+      keyCount = 0
       File.open(@file.path).each do |line|
         if MetaKeyFactory.is_key(line)
+          keyCount = keyCount + 1
           metaClass = MetaKeyFactory.new.findModel(line)
-          p "ID " + metaClass.id
+          #p "ID " + metaClass.id
         end
-        #hashmap.store(MetaKey.new(line))
+        if !line.match("OMAPALT=A").nil?
+          p line
+        end
+        # count = 0
+        # line.split("\t").each do | word |
+        #   count = count + 1
+        # end
+        # p keyCount
+        # p count
+        #hashMap.store(metaClass.id, "")
+        #p hashMap
       end
     end
     #fileData = File.open(@file.path).read
@@ -41,7 +53,3 @@ class FileUploadController < ApplicationController
   end
 
 end
-
-#line.split("\t").each do | word |
-#p word
-#end
