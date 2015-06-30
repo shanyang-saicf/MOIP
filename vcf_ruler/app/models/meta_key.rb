@@ -1,10 +1,11 @@
 class MetaKey
+  
+  attr_accessor :id
 
-  attr_reader :id
-
-  def parse(line)
+  def initialize(line)
     @id = line_breaker(line)
   end
+
 
   private
 

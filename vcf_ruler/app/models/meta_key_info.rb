@@ -1,8 +1,9 @@
 class MetaKeyInfo < MetaKey
 
-  attr_reader :number, :type, :description
+  attr_accessor :number, :type, :description
 
-  def parse(line)
+  def initialize(line)
+    @id = ""
     p line
   end
 end

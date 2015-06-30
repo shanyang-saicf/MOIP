@@ -1,4 +1,4 @@
 class MetaKeyAlt < MetaKey
 
-  attr_reader :description
+  attr_accessor :description
 end

@@ -1,14 +1,13 @@
 
 class MetaKeyContig < MetaKey
 
-    attr_reader :length, :assembly
+    attr_accessor :length, :assembly
 
-  def parse(line)
+  def initialize(line)
     array = line_breaker(line)
     @id = array[0].match("=").post_match
     @length = array[1].match("=").post_match
     @assembly = array[2].match("=").post_match
-    p @id + " " + @length + " " + @assembly
   end
 
   private

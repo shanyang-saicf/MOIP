@@ -18,14 +18,15 @@ class FileUploadController < ApplicationController
     @fileupload = FileUpload.new( user_params )
     #@fileupload.save
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
-    hashMap = []
+    hashMap = {}
     begin
       File.open(@file.path).each do |line|
         if MetaKeyFactory.is_key(line)
-          MetaKeyFactory.new.findModel(line)
+          metaClass = MetaKeyFactory.new.findModel(line)
+          p "ID " + metaClass.id
         end
           #hashmap.store(MetaKey.new(line))
-
+        #p hashMap
         #line.split("\t").each do | word |
           #p word
         #end

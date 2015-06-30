@@ -9,11 +9,11 @@ class MetaKeyFactory < MetaKey
     classString = "MetaKey" + classString.capitalize
     clazz = classString.classify.safe_constantize
     if !clazz.nil?
-      clazz.new.parse(line)
+      clazz = clazz.new(line)
     else
-      MetaKey.new.parse(line)
+      clazz = MetaKey.new(line)
     end
-
+    return clazz
   end
 
 end
