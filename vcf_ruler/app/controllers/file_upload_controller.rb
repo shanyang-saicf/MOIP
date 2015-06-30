@@ -25,11 +25,7 @@ class FileUploadController < ApplicationController
           metaClass = MetaKeyFactory.new.findModel(line)
           p "ID " + metaClass.id
         end
-          #hashmap.store(MetaKey.new(line))
-        #p hashMap
-        #line.split("\t").each do | word |
-          #p word
-        #end
+        #hashmap.store(MetaKey.new(line))
       end
     end
     #fileData = File.open(@file.path).read
@@ -45,3 +41,7 @@ class FileUploadController < ApplicationController
   end
 
 end
+
+#line.split("\t").each do | word |
+#p word
+#end

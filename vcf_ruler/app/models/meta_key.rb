@@ -1,5 +1,6 @@
 class MetaKey
-  
+  include MetaKeyModule
+
   attr_accessor :id
 
   def initialize(line)
