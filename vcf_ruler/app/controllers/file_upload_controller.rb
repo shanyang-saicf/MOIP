@@ -1,4 +1,5 @@
 require 'csv'
+require 'json'
 
 class FileUploadController < ApplicationController
 
@@ -52,7 +53,7 @@ class FileUploadController < ApplicationController
         #p hashMap
       end
     end
-    render :json => hashJson.to_json
+    render :json => JSON.pretty_generate(hashJson)
     #fileData = File.open(@file.path).read
     #p fileData
   end
