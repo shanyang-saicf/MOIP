@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   post 'file_upload/create'
 
+  post 'file_upload/new_rule'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

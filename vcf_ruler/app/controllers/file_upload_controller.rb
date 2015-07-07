@@ -15,18 +15,24 @@ class FileUploadController < ApplicationController
   def show
   end
 
+  def new_rule
+    json = ActiveSupport::JSON.encode(params)
+    json = ActiveSupport::JSON.decode(json)
+
+    @ruleupload = RuleUpload.new(json)
+    @ruleupload.save
+    render :nothing => true
+  end
+
   def create
     @fileupload = FileUpload.new( user_params )
     #@fileupload.save
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
     hashJson = []
     begin
-      keyCount = 0
       File.open(@file.path).each do |line|
         if MetaKeyFactory.is_key(line)
-          keyCount = keyCount + 1
           metaClass = MetaKeyFactory.new.findModel(line)
-          #p "ID " + metaClass.id
         end
         if !line.match("OMAPALT=A").nil?
           data = line.split("\t")
@@ -43,19 +49,11 @@ class FileUploadController < ApplicationController
           hashMap['Mock_rep1_DNA'] = data[9]
           hashJson << hashMap
         end
-        # count = 0
-        # line.split("\t").each do | word |
-        #   count = count + 1
-        # end
-        # p keyCount
-        # p count
-        #hashMap.store(metaClass.id, "")
-        #p hashMap
+
       end
     end
     render :json => JSON.pretty_generate(hashJson)
-    #fileData = File.open(@file.path).read
-    #p fileData
+
   end
 
 
