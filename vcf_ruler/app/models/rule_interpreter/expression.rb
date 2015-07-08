@@ -1,10 +1,10 @@
 class Expression
 
-  # attr_accessor :fileHashed
-  #
-  # def initialize(fileHashed)
-  #   @fileHashed = fileHashed
-  # end
+  attr_accessor :fileHashed
+
+  def initialize(fileHashed)
+    @fileHashed = fileHashed
+  end
 
   def |(other)
     Or.new(self, other)
@@ -23,7 +23,7 @@ class Expression
   end
 
   def evaluate(expression)
-    p expression
+    expression.evaluate
   end
 
 end

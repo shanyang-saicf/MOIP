@@ -5,8 +5,12 @@ class LessThan < Expression
     @expression2 = expression2
   end
 
-  def evaluate(line)
-    return  @expression1.evaluate(line) <= @expression2.evaluate(line)
+  def evaluate
+    if (@expression1.is_a? String) && (@expression2.is_a? String)
+      return @expression1 < @expression2
+    else
+      return  @expression1.evaluate < @expression2.evaluate
+    end
   end
 
 end
