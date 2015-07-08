@@ -18,7 +18,6 @@ class FileUploadController < ApplicationController
   def new_rule
     json = ActiveSupport::JSON.encode(params)
     json = ActiveSupport::JSON.decode(json)
-
     @ruleupload = RuleUpload.new(json)
     @ruleupload.save
     render :nothing => true
@@ -33,8 +32,7 @@ class FileUploadController < ApplicationController
       File.open(@file.path).each do |line|
         if MetaKeyFactory.is_key(line)
           metaClass = MetaKeyFactory.new.findModel(line)
-        end
-        if !line.match("OMAPALT=A").nil?
+        else
           data = line.split("\t")
           hashMap = {'CHROM' => '',	'POS' => '',	'ID' => '',	'REF' => '',	'ALT' => '', 'QUAL' => '',	'FILTER' => '',	'INFO' => '',	'FORMAT' => '',	'Mock_rep1_DNA' => ''}
           hashMap['CHROM'] = data[0]
@@ -49,9 +47,12 @@ class FileUploadController < ApplicationController
           hashMap['Mock_rep1_DNA'] = data[9]
           hashJson << hashMap
         end
-
       end
     end
+
+
+    p Equals.new("FilterType", "") & GreaterThan.new("CopyNumber", "7")
+
     render :json => JSON.pretty_generate(hashJson)
 
   end
