@@ -1,3 +1,4 @@
+require 'json'
 class Expression
 
   attr_accessor :fileHashed
@@ -24,6 +25,14 @@ class Expression
 
   def evaluate(expression)
     expression.evaluate
+  end
+
+  def testEval(expression)
+    fileHashed.each do | line |
+      if expression.evaluate(line)
+        p line.as_json
+      end
+    end
   end
 
 end
