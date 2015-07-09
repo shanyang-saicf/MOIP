@@ -59,7 +59,7 @@ class FileUploadController < ApplicationController
     end
 
     @expression = Expression.new(hashJson)
-    #@expression.testEval(Equals.new("POS", "100611165"))
+    @expression.testEval(Equals.new("FXX", "0.00267019"))
     #p "123 = 123 " + @expression.evaluate(Equals.new("123", "123")).to_s
     #p "345 > 344 " + @expression.evaluate(GreaterThan.new("345", "344")).to_s
     #p "123 < 321 " + @expression.evaluate(LessThan.new("123", "321")).to_s

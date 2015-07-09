@@ -30,7 +30,7 @@ class Expression
   def testEval(expression)
     fileHashed.each do | line |
       if expression.evaluate(line)
-        p line.as_json
+        p line
       end
     end
   end
