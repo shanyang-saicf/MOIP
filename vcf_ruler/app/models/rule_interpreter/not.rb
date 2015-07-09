@@ -3,11 +3,11 @@ class Not < Expression
     @expression = expression
   end
 
-  def evaluate
+  def evaluate(line)
     if (@expression.is_a? Boolean)
       return !@expression
     else
-      return  !@expression.evaluate
+      return  !@expression.evaluate(line)
     end
   end
 
