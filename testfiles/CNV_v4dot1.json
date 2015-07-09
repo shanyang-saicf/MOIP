@@ -10,42 +10,54 @@
         },
         "or": {
             "Identifier": {
-                "Operator1": "!=",
-                "Value1": "",
-                "Operator2": "!=",
-                "Value2": "."
+                "and": {
+                    "Operator1": "!=",
+                    "Value1": "",
+                    "Operator2": "!=",
+                    "Value2": "."
+                }
             },
             "NonHotspot": {
                 "or": {
                     "Gene": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "OncamineVariantClass": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "Exxon": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "Function": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "Protein": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     }
                 }
             }
