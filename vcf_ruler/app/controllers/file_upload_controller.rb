@@ -34,7 +34,7 @@ class FileUploadController < ApplicationController
           metaClass = MetaKeyFactory.new.findModel(line)
         else
           data = line.split("\t")
-          hashMap = {'CHROM' => '',	'POS' => '',	'ID' => '',	'REF' => '',	'ALT' => '', 'QUAL' => '',	'FILTER' => '',	'INFO' => '',	'FORMAT' => '',	'Mock_rep1_DNA' => ''}
+          hashMap = {'CHROM' => '',	'POS' => '',	'ID' => '',	'REF' => '',	'ALT' => '', 'QUAL' => '',	'FILTER' => '',	'INFO' => {},	'FORMAT' => '',	'Mock_rep1_DNA' => ''}
           hashMap['CHROM'] = data[0]
           hashMap['POS'] = data[1]
           hashMap['ID'] = data[2]
@@ -42,7 +42,15 @@ class FileUploadController < ApplicationController
           hashMap['ALT'] = data[4]
           hashMap['QUAL'] = data[5]
           hashMap['FILTER'] = data[6]
-          hashMap['INFO'] = data[7]
+          if !data[7].nil?
+            infoHash = {}
+            infoArray = data[7].split(";")
+            infoArray.each do | infoLine |
+              data = infoLine.split("=")
+              infoHash.store(data[0], data[1])
+            end
+          end
+          hashMap['INFO'] = infoHash
           hashMap['FORMAT'] = data[8]
           hashMap['Mock_rep1_DNA'] = data[9]
           hashJson << hashMap
@@ -51,7 +59,7 @@ class FileUploadController < ApplicationController
     end
 
     @expression = Expression.new(hashJson)
-    @expression.testEval(Equals.new("POS", "100611165"))
+    #@expression.testEval(Equals.new("POS", "100611165"))
     #p "123 = 123 " + @expression.evaluate(Equals.new("123", "123")).to_s
     #p "345 > 344 " + @expression.evaluate(GreaterThan.new("345", "344")).to_s
     #p "123 < 321 " + @expression.evaluate(LessThan.new("123", "321")).to_s
