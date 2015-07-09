@@ -18,7 +18,6 @@ class FileUploadController < ApplicationController
   def new_rule
     json = ActiveSupport::JSON.encode(params)
     json = ActiveSupport::JSON.decode(json)
-
     @ruleupload = RuleUpload.new(json)
     @ruleupload.save
     render :nothing => true
@@ -33,10 +32,9 @@ class FileUploadController < ApplicationController
       File.open(@file.path).each do |line|
         if MetaKeyFactory.is_key(line)
           metaClass = MetaKeyFactory.new.findModel(line)
-        end
-        if !line.match("OMAPALT=A").nil?
+        else
           data = line.split("\t")
-          hashMap = {'CHROM' => '',	'POS' => '',	'ID' => '',	'REF' => '',	'ALT' => '', 'QUAL' => '',	'FILTER' => '',	'INFO' => '',	'FORMAT' => '',	'Mock_rep1_DNA' => ''}
+          hashMap = {'CHROM' => '',	'POS' => '',	'ID' => '',	'REF' => '',	'ALT' => '', 'QUAL' => '',	'FILTER' => '',	'INFO' => {},	'FORMAT' => '',	'Mock_rep1_DNA' => ''}
           hashMap['CHROM'] = data[0]
           hashMap['POS'] = data[1]
           hashMap['ID'] = data[2]
@@ -44,14 +42,35 @@ class FileUploadController < ApplicationController
           hashMap['ALT'] = data[4]
           hashMap['QUAL'] = data[5]
           hashMap['FILTER'] = data[6]
-          hashMap['INFO'] = data[7]
+          if !data[7].nil?
+            infoHash = {}
+            infoArray = data[7].split(";")
+            infoArray.each do | infoLine |
+              data = infoLine.split("=")
+              infoHash.store(data[0], data[1])
+            end
+          end
+          hashMap['INFO'] = infoHash
           hashMap['FORMAT'] = data[8]
           hashMap['Mock_rep1_DNA'] = data[9]
           hashJson << hashMap
         end
-
       end
     end
+
+    @expression = Expression.new(hashJson)
+    @expression.testEval(And.new(Equals.new("FXX", "0.00267019"), Not.new(Equals.new("POS", "100611165"))))  #Same as @expression.testEval((Equals.new("FXX", "0.00267019") & Equals.new("POS", "100611165")))
+    #p "123 = 123 " + @expression.evaluate(Equals.new("123", "123")).to_s
+    #p "345 > 344 " + @expression.evaluate(GreaterThan.new("345", "344")).to_s
+    #p "123 < 321 " + @expression.evaluate(LessThan.new("123", "321")).to_s
+    #p "true || false " + @expression.evaluate(Or.new(true, false)).to_s
+    #p "123 = 123 && 345 > 344 " + @expression.evaluate(Equals.new("123", "123") & GreaterThan.new("345", "344")).to_s
+    #p "345 >= 344 " + @expression.evaluate(Or.new(Equals.new("345", "344"), GreaterThan.new("345", "344"))).to_s
+    #p "123 != 123 " + @expression.evaluate(Not.new(Equals.new("123", "123"))).to_s
+    #p "!(345 > 344 && 123 < 321) " + @expression.evaluate(Not.new(GreaterThan.new("345", "344")) & LessThan.new("123", "321")).to_s
+
+    #p @expression.evaluate(Equals.new("FilterType", "") & GreaterThan.new("CopyNumber", "7"))
+
     render :json => JSON.pretty_generate(hashJson)
 
   end
