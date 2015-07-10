@@ -9,8 +9,6 @@
             "Value1": "COSM250061"
         },
         "Protein": {
-            "Operator1": "!=",
-            "Value1": "null",
             "or": {
                 "Operator1": "==",
                 "Value1": "",
@@ -19,79 +17,153 @@
             }
         },
         "Function": {
-            "Operator1": "!=",
-            "Value1": "synonymous",
-            "or": {
-                "Operator1": "==",
-                "Value1": "refallele",
-                "Operator2": "==",
-                "Value2": "unknown",
-                "Operator3": "==",
-                "Value3": "missense",
-                "Operator4": "==",
-                "Value4": "nonsense",
-                "Operator5": "==",
-                "Value5": "frameshiftinsertion",
-                "Operator6": "==",
-                "Value6": "frameshiftdeletion",
-                "Operator7": "==",
-                "Value7": "nonframeshiftinsertion",
-                "Operator8": "==",
-                "Value8": "nonframeshiftdeletion",
-                "Operator9": "==",
-                "Value9": "stoploss",
-                "Operator10": "==",
-                "Value10": "frameshiftblocksubstitution",
-                "Operator11": "==",
-                "Value11": "nonframeshiftblocksubstitution"
+            "and": {
+                "Operator1": "!=",
+                "Value1": "synonymous",
+                "or": {
+                    "Operator1": "contains",
+                    "Value1": "refallele",
+                    "Operator2": "contains",
+                    "Value2": "unknown",
+                    "Operator3": "contains",
+                    "Value3": "missense",
+                    "Operator4": "contains",
+                    "Value4": "nonsense",
+                    "Operator5": "contains",
+                    "Value5": "frameshiftinsertion",
+                    "Operator6": "contains",
+                    "Value6": "frameshiftdeletion",
+                    "Operator7": "contains",
+                    "Value7": "nonframeshiftinsertion",
+                    "Operator8": "contains",
+                    "Value8": "nonframeshiftdeletion",
+                    "Operator9": "contains",
+                    "Value9": "stoploss",
+                    "Operator10": "contains",
+                    "Value10": "frameshiftblocksubstitution",
+                    "Operator11": "contains",
+                    "Value11": "nonframeshiftblocksubstitution"
+                }
             }
         },
         "Intronic": {
-            "Operator1": "==",
-            "Value1": "PASS"
+            "and": {
+                "Location": {
+                    "Operator1": "!=",
+                    "Value1": "intronic"
+                },
+                "Identifier": {
+                    "and": {
+                        "Operator1": "!=",
+                        "Value1": "",
+                        "Operator2": "!=",
+                        "Value2": "."
+                    }
+                },
+                "and": {
+                    "Oncominevariantclass": {
+                        "Operator1": "!=",
+                        "Value1": ""
+                    },
+                    "Exxon": {
+                        "Operator1": "!=",
+                        "Value1": ""
+                    },
+                    "Function": {
+                        "Operator1": "!=",
+                        "Value1": ""
+                    },
+                    "Location": {
+                        "Operator1": "!=",
+                        "Value1": ""
+                    }
+                }
+            }
         },
         "SNVReadDepth": {
-            "Operator1": "==",
-            "Value1": "PASS"
+            "and": {
+                "alleleFrequency": {
+                    "and": {
+                        "Operator1": "!=",
+                        "Value1": "null",
+                        "Operator2": ">=",
+                        "Value2": "0.05"
+                    }
+                },
+                "alternativeObservationCount": {
+                    "and": {
+                        "Operator1": "!=",
+                        "Value1": "null",
+                        "Operator2": ">=",
+                        "Value2": "25"
+                    }
+                }
+            }
         },
         "or": {
             "Identifier": {
-                "Operator1": "!=",
-                "Value1": "",
-                "Operator2": "!=",
-                "Value2": "."
+                "and": {
+                    "Operator1": "!=",
+                    "Value1": "",
+                    "Operator2": "!=",
+                    "Value2": "."
+                }
             },
             "NonHotspot": {
                 "or": {
                     "Gene": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "OncamineVariantClass": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "Exxon": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "Function": {
-                        "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
                     },
                     "Protein": {
+                        "and": {
+                            "Operator1": "!=",
+                            "Value1": "",
+                            "Operator2": "!=",
+                            "Value2": "null"
+                        }
+                    }
+                }
+            },
+            "or": {
+                "Oncominevariantclass": {
+                    "and": {
                         "Operator1": "!=",
-                        "Value1": "",
-                        "Operator2": "!=",
-                        "Value2": "null"
+                        "Value1": "null",
+                        "or": {
+                            "Operator1": "==",
+                            "Value1": "deleterious",
+                            "Operator2": "==",
+                            "Value2": "hotspot"
+                        }
                     }
                 }
             }
