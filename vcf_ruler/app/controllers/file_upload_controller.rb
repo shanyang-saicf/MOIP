@@ -46,11 +46,12 @@ class FileUploadController < ApplicationController
             infoHash = {}
             infoArray = data[7].split(";")
             infoArray.each do | infoLine |
-              data = infoLine.split("=")
-              if data[0] == "FUNC"
-                p data[1][1..data[1].length-2]
-              else
+              if !infoLine.include? "FUNC"
+                data = infoLine.split("=")
                 infoHash.store(data[0], data[1])
+              else
+                data = infoLine.split("=[")
+                infoHash.store(data[0], JSON.parse(("[" + data[1]).tr('\'', '"')))
               end
             end
           end
@@ -63,8 +64,8 @@ class FileUploadController < ApplicationController
     end
 
     @expression = Expression.new(hashJson)
-    @expression.testEval(And.new(Equals.new("FXX", "0.00267019"), Not.new(Equals.new("POS", "10032611165"))))  #Same as @expression.testEval((Equals.new("FXX", "0.00267019") & Equals.new("POS", "100611165")))
-    @expression.testEval((Equals.new("FXX", "0.00267019") & (Equals.new("POS", "100611165"))))
+    #@expression.testEval(And.new(Equals.new("FXX", "0.00267019"), Not.new(Equals.new("POS", "10032611165"))))  #Same as @expression.testEval((Equals.new("FXX", "0.00267019") & Equals.new("POS", "100611165")))
+    #@expression.testEval((Equals.new("FXX", "0.00267019") & (Equals.new("POS", "100611165"))))
     #p "123 = 123 " + @expression.evaluate(Equals.new("123", "123")).to_s
     #p "345 > 344 " + @expression.evaluate(GreaterThan.new("345", "344")).to_s
     #p "123 < 321 " + @expression.evaluate(LessThan.new("123", "321")).to_s
