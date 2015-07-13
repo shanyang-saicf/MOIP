@@ -51,7 +51,12 @@ class FileUploadController < ApplicationController
                 infoHash.store(data[0], data[1])
               else
                 data = infoLine.split("=[")
-                infoHash.store(data[0], JSON.parse(("[" + data[1]).tr('\'', '"')))
+                json = ActiveSupport::JSON.decode(("[" + data[1]).tr('\'', '"'))
+                funcHash = {}
+                json[0].each { |key, value|
+                  funcHash.store(key, value)
+                }
+                infoHash.store(data[0], funcHash)
               end
             end
           end
@@ -65,7 +70,7 @@ class FileUploadController < ApplicationController
 
     @expression = Expression.new(hashJson)
     #@expression.testEval(And.new(Equals.new("FXX", "0.00267019"), Not.new(Equals.new("POS", "10032611165"))))  #Same as @expression.testEval((Equals.new("FXX", "0.00267019") & Equals.new("POS", "100611165")))
-    #@expression.testEval((Equals.new("FXX", "0.00267019") & (Equals.new("POS", "100611165"))))
+    #@expression.testEval((Equals.new("POS", "100611165") & (Equals.new("transcript", "NM_000061.2"))))
     #p "123 = 123 " + @expression.evaluate(Equals.new("123", "123")).to_s
     #p "345 > 344 " + @expression.evaluate(GreaterThan.new("345", "344")).to_s
     #p "123 < 321 " + @expression.evaluate(LessThan.new("123", "321")).to_s
