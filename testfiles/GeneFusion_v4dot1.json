@@ -29,7 +29,7 @@
                                     },
                                     {
                                         "Identifier": {
-                                            "Operator1": "!=",
+                                            "Operator1": "contains",
                                             "Value1": "EGFR-EGFR.E1E8.DelPositive"
                                         }
                                     },
