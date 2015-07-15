@@ -81,7 +81,7 @@
                     }
                 ]
             },
-            "Intronic--TODO": {
+            "Intronic": {
                 "and": [
                     {
                         "Location": {
@@ -90,44 +90,48 @@
                         }
                     },
                     {
-                        "Identifier": {
-                            "and": [
-                                {
-                                    "Operator1": "!=",
-                                    "Value1": ""
-                                },
-                                {
-                                    "Operator1": "!=",
-                                    "Value1": "."
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "and": [
+                        "or": [
                             {
-                                "Oncominevariantclass": {
-                                    "Operator1": "!=",
-                                    "Value1": ""
+                                "Identifier": {
+                                    "and": [
+                                        {
+                                            "Operator1": "!=",
+                                            "Value1": ""
+                                        },
+                                        {
+                                            "Operator1": "!=",
+                                            "Value1": "."
+                                        }
+                                    ]
                                 }
                             },
                             {
-                                "Exxon": {
-                                    "Operator1": "!=",
-                                    "Value1": ""
-                                }
-                            },
-                            {
-                                "Function": {
-                                    "Operator1": "!=",
-                                    "Value1": ""
-                                }
-                            },
-                            {
-                                "Location": {
-                                    "Operator1": "!=",
-                                    "Value1": ""
-                                }
+                                "and": [
+                                    {
+                                        "Oncominevariantclass": {
+                                            "Operator1": "!=",
+                                            "Value1": ""
+                                        }
+                                    },
+                                    {
+                                        "Exxon": {
+                                            "Operator1": "!=",
+                                            "Value1": ""
+                                        }
+                                    },
+                                    {
+                                        "Function": {
+                                            "Operator1": "!=",
+                                            "Value1": ""
+                                        }
+                                    },
+                                    {
+                                        "Location": {
+                                            "Operator1": "!=",
+                                            "Value1": ""
+                                        }
+                                    }
+                                ]
                             }
                         ]
                     }
