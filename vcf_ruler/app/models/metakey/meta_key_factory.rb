@@ -4,6 +4,7 @@ class MetaKeyFactory < MetaKey
   extend MetaKeyModule
 
 
+
   def findModel(line)
     classString = line.match("##").post_match.match("=").pre_match
     classString = "metakey" + classString.capitalize
