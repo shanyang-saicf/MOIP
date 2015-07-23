@@ -1,0 +1,3 @@
+class FormatParser < Parser
+
+end

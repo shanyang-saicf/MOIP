@@ -1,0 +1,3 @@
+class InfoParser < Parser
+
+end

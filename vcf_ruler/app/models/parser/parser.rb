@@ -16,6 +16,7 @@ class Parser
           hashMap = {}
           data = line.split("\t")
           @headers.headers.each { |header| hashMap[header] = ''}
+
           hashMap['CHROM'] = data[0]
           hashMap['POS'] = data[1]
           hashMap['ID'] = data[2]
@@ -49,6 +50,17 @@ class Parser
       end
     end
     hashJson
+  end
+
+  def parseFactory(header ,line)
+    classString = header.capitalize + "Parser"
+    clazz = classString.classify.safe_constantize
+    if !clazz.nil?
+      # clazz = clazz.new.parse(header)
+    else
+      # clazz = MetaKey.new(header)
+    end
+    return clazz
   end
 
 end

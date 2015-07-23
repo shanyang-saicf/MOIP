@@ -1,0 +1,3 @@
+class IdParser < Parser
+
+end
