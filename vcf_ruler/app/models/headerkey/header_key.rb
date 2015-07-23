@@ -1,4 +1,6 @@
 class HeaderKey
+  include Mongoid::Document
+  include Mongoid::Paperclip
 
   attr_accessor :headers
 

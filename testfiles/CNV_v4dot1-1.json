@@ -1,0 +1,40 @@
+//if FilterType == PASS && CopyNumber >= 7
+//        pass
+//else if (Identifier != COSM250061 && (Gene != "" && Gene != null) && (OncamineVariantClass != "" && OncamineVariantClass != null))
+//        pass
+//else
+//        fail
+{
+  "and": {
+    "FilterType": {
+      "Operator1": "==",
+      "Value1": "PASS"
+    },
+    "CopyNumber": {
+      "Operator1": ">=",
+      "Value1": "7"
+    }
+  },
+  "or": [
+    {
+      "Identifier": {
+        "Operator1": "!=",
+        "Value1": "COSM250061"
+      }
+    },
+    {
+      "and" : [
+        {
+          "Gene": {
+            "Operator1": "!blank?"
+          }
+        },
+        {
+          "OncamineVariantClass": {
+            "Operator1": "!blank?"
+          }
+        }
+      ]
+    }
+  ]
+}
