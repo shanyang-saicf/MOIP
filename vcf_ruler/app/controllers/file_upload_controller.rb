@@ -28,7 +28,7 @@ class FileUploadController < ApplicationController
   def create
     @fileupload = FileUpload.new( user_params )
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
-    hashJson = Parser.new.parse(@file)
+    hashJson = Parser.new.fileParse(@file)
     render :json => JSON.pretty_generate(hashJson)
 
   end

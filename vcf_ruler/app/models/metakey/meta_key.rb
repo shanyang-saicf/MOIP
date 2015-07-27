@@ -11,6 +11,6 @@ class MetaKey
   private
 
   def line_breaker(line)
-    line.match("##").post_match.match("=").pre_match
-  end
+  line.match("##").post_match.match("=").pre_match
+end
 end
