@@ -16,7 +16,7 @@ class HeaderKey
   def line_breaker(line)
     line.match("#").post_match.split("\t").each do | header |
       header.tr("\n", "")
-      headers.push(header.tr("\n", ""))
+      headers.push(header.tr("\n", "").squish)
     end
   end
 

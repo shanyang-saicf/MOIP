@@ -14,3 +14,5 @@ class And < Expression
     end
   end
 end
+
+# And.new(Equals.new("FilterType", "PASS"), Not.new(Equals.new("Identifier", "COSM250061")))
