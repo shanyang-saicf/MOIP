@@ -18,8 +18,8 @@ class Parser
             count = 0
             @headers.headers.each { |header|
               hashMap[header] = ''
-              parseFactory(header, data[count])
-              count + 1
+              hashMap[header] = parseFactory(header, data[count])
+              count = count + 1
             }
 
             # hashMap['CHROM'] = data[0]
@@ -65,7 +65,9 @@ class Parser
   def parseFactory(header ,line)
     classString = header.capitalize + "Parser"
     clazz = classString.classify.safe_constantize
-    p clazz
+    if clazz.nil?
+      p classString
+    end
     if !clazz.nil?
       clazz = clazz.new.parse(line)
     else
