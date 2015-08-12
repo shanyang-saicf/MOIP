@@ -1,3 +1,0 @@
-class FormatParser < Parser
-
-end

@@ -1,3 +1,0 @@
-class QualParser < Parser
-
-end

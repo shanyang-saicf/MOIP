@@ -1,3 +1,0 @@
-class FilterParser < Parser
-
-end

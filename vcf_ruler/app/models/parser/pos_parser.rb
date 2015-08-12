@@ -1,3 +1,0 @@
-class PosParser < Parser
-
-end
