@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rule/index'
+
   get 'file_upload/index'
 
   get 'file_upload/new'

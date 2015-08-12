@@ -1,0 +1,15 @@
+<h1>Listing of Rules Files</h1>
+
+<table>
+  <tr>
+    <th>File Name</th>
+
+  </tr>
+
+  <% @files.each do |file| %>
+      <tr>
+        <td><li><%= link_to file[/\/.*/], file[/\/.*/] %></li></td>
+
+      </tr>
+  <% end %>
+</table>
