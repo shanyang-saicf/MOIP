@@ -1,0 +1,3 @@
+class ChromParser < Parser
+
+end

@@ -1,0 +1,3 @@
+class RefParser < Parser
+
+end
