@@ -11,3 +11,10 @@
 /log/*
 !/log/.keep
 /tmp
+
+#Ignore all .idea
+.idea
+.idea/*
+
+#Ignore lock file
+Gemfile.lock
