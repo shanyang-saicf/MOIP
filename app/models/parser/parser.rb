@@ -1,5 +1,9 @@
 class Parser
 
+  def initialize
+
+  end
+
   def fileParse(file)
     @metaClass = MetaKeyFactory.new
     @headers = HeaderKey.new
