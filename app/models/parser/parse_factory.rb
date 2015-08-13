@@ -1,4 +1,4 @@
-class Parser
+class ParseFactory
 
   def fileParse(file)
     @metaClass = MetaKeyFactory.new
@@ -35,9 +35,9 @@ class Parser
 
   def parseFactory(header ,line)
     if header.include? "Mock"
-     classString = header.classify.gsub('-', '_')
-     classString = classString.camelize + "Parser"
-     clazz = classString.safe_constantize
+      classString = header.classify.gsub('-', '_')
+      classString = classString.camelize + "Parser"
+      clazz = classString.safe_constantize
     else
       classString = header.capitalize + "Parser"
       clazz = classString.classify.safe_constantize

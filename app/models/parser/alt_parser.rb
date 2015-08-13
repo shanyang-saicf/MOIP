@@ -1,4 +1,4 @@
-class AltParser < Parser
+class AltParser < ParseFactory
 
   attr_accessor :alt
 

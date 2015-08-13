@@ -1,3 +1,3 @@
-class RefParser < Parser
+class RefParser < ParseFactory
 
 end

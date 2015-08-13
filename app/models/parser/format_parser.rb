@@ -1,3 +1,3 @@
-class FormatParser < Parser
+class FormatParser < ParseFactory
 
 end

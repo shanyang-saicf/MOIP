@@ -1,3 +1,3 @@
-class FilterParser < Parser
+class FilterParser < ParseFactory
 
 end
