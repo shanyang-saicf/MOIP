@@ -7,5 +7,5 @@
 [![Test Coverage](https://codeclimate.com/github/CBIIT/MOIP/badges/coverage.svg)](https://codeclimate.com/github/CBIIT/MOIP/coverage)
 
 ######http://localhost:3000/rule/index for a list of Rule Files
-######cd ~/git/vcf_rules/vcf_ruler/public/rulefiles
+######cd ~/git/MOIP/public/rulefiles
 ######curl -F "fileupload[fileupload]=@EML4_ALK_cosf479.vcf;type=text/directory" http://localhost:3000/file_upload/create
