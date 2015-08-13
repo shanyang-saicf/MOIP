@@ -1,4 +1,4 @@
-class InfoParser < Parser
+class InfoParser < ParseFactory
 
   attr_accessor :infoHash
 

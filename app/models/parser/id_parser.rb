@@ -1,4 +1,4 @@
-class IdParser < Parser
+class IdParser < ParseFactory
 
   attr_accessor :id
 

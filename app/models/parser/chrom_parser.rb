@@ -1,3 +1,3 @@
-class ChromParser < Parser
+class ChromParser < ParseFactory
 
 end

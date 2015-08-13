@@ -1,3 +1,3 @@
-class QualParser < Parser
+class QualParser < ParseFactory
 
 end
