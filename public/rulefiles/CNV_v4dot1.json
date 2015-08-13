@@ -1,53 +1,33 @@
 {
-    "and": [
+    "PassFilter": [
         {
             "FilterType": {
                 "Operator1": "==",
                 "Value1": "PASS"
-            },
+            }
+        }
+    ],
+    "CopyNumberFilter": [
+        {
             "CopyNumber": {
                 "Operator1": ">=",
                 "Value1": "7"
-            },
-            "or": [
+            }
+        }
+    ],
+    "IdentifierFilter": [
+        {
+            "and": [
                 {
                     "Identifier": {
                         "Operator1": "!=",
-                        "Value1": "COSM250061"
+                        "Value1": ""
                     }
                 },
                 {
-                    "NonHotspot-TODO": {
-                        "and": [
-                            {
-                                "Gene": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "OncamineVariantClass": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
+                    "Identifier": {
+                        "Operator1": "!=",
+                        "Value1": "."
                     }
                 }
             ]
