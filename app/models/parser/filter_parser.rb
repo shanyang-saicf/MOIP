@@ -1,3 +1,3 @@
-class FilterParser < ParseFactory
+class FilterParser < VcfParser
 
 end

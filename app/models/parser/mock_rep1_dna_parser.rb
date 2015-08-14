@@ -1,4 +1,4 @@
-class MockRep1DnaParser < ParseFactory
+class MockRep1DnaParser < VcfParser
 
   attr_accessor :repDna
 

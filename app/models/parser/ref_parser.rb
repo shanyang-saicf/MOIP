@@ -1,3 +1,3 @@
-class RefParser < ParseFactory
+class RefParser < VcfParser
 
 end

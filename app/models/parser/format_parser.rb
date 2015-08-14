@@ -1,3 +1,3 @@
-class FormatParser < ParseFactory
+class FormatParser < VcfParser
 
 end

@@ -2,6 +2,7 @@ require 'csv'
 require 'json'
 
 class FileUploadController < ApplicationController
+  include ParseFactory
 
 
   skip_before_filter :verify_authenticity_token
@@ -19,7 +20,7 @@ class FileUploadController < ApplicationController
     json = ActiveSupport::JSON.encode(params)
     json = ActiveSupport::JSON.decode(json)
     @ruleupload = RuleUpload.new(json)
-    @ruleParser = RuleParser.new()
+    @ruleParser = ParseFactory.new
     @ruleParser.parse(json)
     #@ruleupload.save
     render :nothing => true
@@ -28,7 +29,7 @@ class FileUploadController < ApplicationController
   def create
     @fileupload = FileUpload.new( user_params )
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
-    hashJson = Parser.new.fileParse(@file)
+    hashJson = VcfParser.new.fileParse(@file)
     render :json => JSON.pretty_generate(hashJson)
 
   end

@@ -1,3 +1,3 @@
-class PosParser < ParseFactory
+class PosParser < VcfParser
 
 end

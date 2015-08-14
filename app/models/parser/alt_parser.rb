@@ -1,4 +1,4 @@
-class AltParser < ParseFactory
+class AltParser < VcfParser
 
   attr_accessor :alt
 
