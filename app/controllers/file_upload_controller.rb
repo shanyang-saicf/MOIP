@@ -17,11 +17,14 @@ class FileUploadController < ApplicationController
   end
 
   def new_rule
+    # params[:file_upload].delete
     json = ActiveSupport::JSON.encode(params)
     json = ActiveSupport::JSON.decode(json)
+    json.delete('file_upload')
+    json.delete('controller')
+    json.delete('action')
     @ruleupload = RuleUpload.new(json)
-    @ruleParser = ParseFactory.new
-    @ruleParser.parse(json)
+    RuleParser.new.parseJson(json)
     #@ruleupload.save
     render :nothing => true
   end
@@ -31,7 +34,6 @@ class FileUploadController < ApplicationController
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
     hashJson = VcfParser.new.fileParse(@file)
     render :json => JSON.pretty_generate(hashJson)
-
   end
 
   private
