@@ -9,7 +9,7 @@
     ],
     "CopyNumberFilter": [
         {
-            "FORMAT.1.CN": {
+            "CN": {
                 "Operator1": ">=",
                 "Value1": "7"
             }
