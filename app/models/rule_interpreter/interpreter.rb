@@ -27,7 +27,7 @@ class Interpreter
         otherArray[count] = logicCase(sentence)
         count = count+1
       elsif sentence.is_a? Enumerable
-        interpret(sentence)
+        # interpret(sentence)
       end
     end
     p Or.new(otherArray[0], otherArray[1], otherArray[2])
@@ -41,7 +41,7 @@ class Interpreter
         otherArray[count] = logicCase(sentence)
         count = count+1
       elsif sentence.is_a? Enumerable
-        interpret(sentence)
+        # interpret(sentence)
       end
     end
     p And.new(otherArray[0], otherArray[1], otherArray[2])
