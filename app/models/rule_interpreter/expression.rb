@@ -1,6 +1,4 @@
 require 'json'
-require 'or'
-require 'and'
 
 class Expression
 
@@ -10,9 +8,9 @@ class Expression
     @fileHashed = fileHashed
   end
 
-  def |(other)
-    Or.new(self, other)
-  end
+  # def |(other)
+  #   Or.new(self, other)
+  # end
 
   def &(other)
     And.new(self, other)

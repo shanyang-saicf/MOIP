@@ -1,8 +1,9 @@
 class Or < Expression
 
-  def initialize(expression1, expression2)
+  def initialize(expression1, expression2, *expression3)
     @expression1 = expression1
     @expression2 = expression2
+    @expression3 = expression3
   end
 
   def evaluate
