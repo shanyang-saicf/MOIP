@@ -1,4 +1,7 @@
 require 'json'
+require 'or'
+require 'and'
+
 class Expression
 
   attr_accessor :fileHashed

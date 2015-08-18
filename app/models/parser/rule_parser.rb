@@ -15,7 +15,7 @@ class RuleParser
     json.each do | key, value|
       deep_transverse(value)
     end
-    p @rules
+    Interpreter.new.interpret(@rules)
   end
 
 
@@ -64,5 +64,7 @@ class RuleParser
     end
     return sentence
   end
+
+  # ["FilterType == PASS", "CopyNumber >= 7", {"and"=>["Identifier != ", "Identifier != ."]}]
 
 end
