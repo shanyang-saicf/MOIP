@@ -1,7 +1,7 @@
 {
     "PassFilter": [
         {
-            "FilterType": {
+            "FILTER": {
                 "Operator1": "==",
                 "Value1": "PASS"
             }
@@ -9,7 +9,7 @@
     ],
     "CopyNumberFilter": [
         {
-            "CopyNumber": {
+            "FORMAT.1.CN": {
                 "Operator1": ">=",
                 "Value1": "7"
             }
@@ -19,13 +19,13 @@
         {
             "and": [
                 {
-                    "Identifier": {
+                    "ID": {
                         "Operator1": "!=",
                         "Value1": ""
                     }
                 },
                 {
-                    "Identifier": {
+                    "ID": {
                         "Operator1": "!=",
                         "Value1": "."
                     }
