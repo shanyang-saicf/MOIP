@@ -8,6 +8,12 @@ class Hash
     end
   end
 
+  def <<(newHash, object=self)
+    if newHash.is_a? Hash
+      object.merge!(newHash)
+    end
+  end
+
   def builder(key, object=self, found=nil)
     if object.respond_to?(:key?) && object.key?(key)
       return object[key]

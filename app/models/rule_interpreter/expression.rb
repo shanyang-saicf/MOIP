@@ -9,6 +9,10 @@ class Expression
     @fileHashed = fileHashed
   end
 
+  def filterHash(newHash)
+    @fileHashed = newHash
+  end
+
   def |(other)
     Or.new(self, other)
   end
@@ -30,13 +34,13 @@ class Expression
   end
 
   def testEval(expression)
-    array = []
+    hash = []
     fileHashed.each do | line |
       if expression.evaluate(line)
-         array << line
+         hash << line
       end
     end
-    return array
+    return hash
   end
 
 
