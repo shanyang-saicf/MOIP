@@ -4,7 +4,6 @@ require 'json'
 class FileUploadController < ApplicationController
   include ParseFactory
 
-
   skip_before_filter :verify_authenticity_token
 
   def index
@@ -25,7 +24,7 @@ class FileUploadController < ApplicationController
     json.delete('action')
     @ruleupload = RuleUpload.new(json)
     RuleParser.new.parseJson(json)
-    #@ruleupload.save
+    @ruleupload.save
     render :nothing => true
   end
 
@@ -33,6 +32,11 @@ class FileUploadController < ApplicationController
     @fileupload = FileUpload.new( user_params )
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
     hashJson = VcfParser.new.fileParse(@file)
+    # @expression = Expression.new(hashJson)
+    # expressionArray = Interpreter.new.interpret([{"and"=>["RAW_CN >= 2.5", "REF_CN >= 2"]}])
+    # expressionArray.each do | expression |
+    #    p @expression.testEval(expression)
+    # end
     render :json => JSON.pretty_generate(hashJson)
   end
 
@@ -42,4 +46,11 @@ class FileUploadController < ApplicationController
     params.require(:fileupload).permit(:fileupload)
   end
 
+
+  # if !Expression.nil?
+  #   p "Hit"
+  #   @ruleParser.each do | expression |
+  #     p Expression.testEval(expression)
+  #   end
+  # end
 end
