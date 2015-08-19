@@ -1,5 +1,6 @@
 require 'json'
 
+
 class Expression
 
   attr_accessor :fileHashed
@@ -8,9 +9,9 @@ class Expression
     @fileHashed = fileHashed
   end
 
-  # def |(other)
-  #   Or.new(self, other)
-  # end
+  def |(other)
+    Or.new(self, other)
+  end
 
   def &(other)
     And.new(self, other)
@@ -29,11 +30,13 @@ class Expression
   end
 
   def testEval(expression)
+    array = []
     fileHashed.each do | line |
       if expression.evaluate(line)
-        p line
+         array << line
       end
     end
+    return array
   end
 
 
