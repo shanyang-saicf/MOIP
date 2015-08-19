@@ -46,11 +46,4 @@ class FileUploadController < ApplicationController
     params.require(:fileupload).permit(:fileupload)
   end
 
-
-  # if !Expression.nil?
-  #   p "Hit"
-  #   @ruleParser.each do | expression |
-  #     p Expression.testEval(expression)
-  #   end
-  # end
 end
