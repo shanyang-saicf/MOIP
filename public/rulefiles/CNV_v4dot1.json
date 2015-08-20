@@ -1,5 +1,12 @@
 {
-    "PassFilter": [
+     "VariantFilter": [
+        {
+            "SVTYPE": {
+                "Operator1": "==",
+                "Value1": "CNV"
+            }
+        }
+    ],   "PassFilter": [
         {
             "FILTER": {
                 "Operator1": "==",

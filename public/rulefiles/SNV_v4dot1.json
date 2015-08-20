@@ -1,7 +1,14 @@
 {
-    "PassFilter": [
+    "VariantFilter": [
         {
-            "FilterType": {
+            "SVTYPE": {
+                "Operator1": "==",
+                "Value1": "SNV"
+            }
+        }
+    ],   "PassFilter": [
+        {
+            "FILTER": {
                 "Operator1": "==",
                 "Value1": "PASS"
             }
@@ -139,13 +146,13 @@
                         {
                             "and": [
                                 {
-                                    "Identifier": {
+                                    "ID": {
                                         "Operator1": "!=",
                                         "Value1": ""
                                     }
                                 },
                                 {
-                                    "Identifier": {
+                                    "ID": {
                                         "Operator1": "!=",
                                         "Value1": "."
                                     }
