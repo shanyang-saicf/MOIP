@@ -5,20 +5,26 @@ module ParseFactory
     end
 
     def parseFactory(header ,line)
-      if header.include? "Mock"
-        classString = header.classify.gsub('-', '_')
-        classString = classString.camelize + "Parser"
-        clazz = classString.safe_constantize
-      else
-        classString = header.capitalize + "Parser"
-        clazz = classString.classify.safe_constantize
-      end
+      classString = header.capitalize + "Parser"
+      clazz = classString.classify.safe_constantize
       if !clazz.nil?
         clazz = clazz.new.parse(line)
       else
         clazz = self.parse(line)
       end
       return clazz
+    end
+
+    def parseFormat(keys, values)
+      @format = FormatParser.new.parse(keys)
+      @mock = MockRep1DnaParser.new.parse(values)
+      formatHash = {}
+      count = 0
+      @format.each do | key |
+        formatHash[key] = @mock[count]
+        count = count + 1
+      end
+      return formatHash
     end
 
 end
