@@ -8,6 +8,13 @@ RSpec.describe "routing to rule", :type => :routing do
                                           )
   end
 
+  it "routes / to rule#index" do
+    expect(:get => "/").to route_to(
+                                         :controller => "rule",
+                                         :action => "index"
+                                     )
+  end
+
   it "does not expose a list of profiles" do
     expect(:get => "/profiles").not_to be_routable
   end
