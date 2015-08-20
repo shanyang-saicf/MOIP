@@ -22,8 +22,10 @@ class FileUploadController < ApplicationController
     json.delete('file_upload')
     json.delete('controller')
     json.delete('action')
-    RuleParser.new.parseJson(json)
-    # @ruleupload.save
+    @ruleupload = RuleUpload.new
+    @ruleupload.write_attribute(:rule, json)
+    @ruleupload.write_attribute(:sentence, RuleParser.new.parseJson(json))
+    @ruleupload.save
     render :nothing => true
   end
 
@@ -32,7 +34,7 @@ class FileUploadController < ApplicationController
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
     hashJson = VcfParser.new.fileParse(@file)
     @expression = Expression.new(hashJson)
-    expressionArray = Interpreter.new.interpret(["FILTER == PASS", "CN >= 7", {"and"=>["ID != ", "ID != ."]}])
+    expressionArray = Interpreter.new.interpret(["SVTYPE == CNV","FILTER == PASS", "CN >= 7", {"and"=>["ID != ", "ID != ."]}])
     newHash = []
     expressionArray.each do | expression |
        newHash = @expression.testEval(expression)

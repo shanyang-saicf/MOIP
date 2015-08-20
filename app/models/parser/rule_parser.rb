@@ -15,9 +15,8 @@ class RuleParser
     json.each do | key, value|
       deep_transverse(value)
     end
-    Interpreter.new.interpret(@rules)
+    return @rules
   end
-
 
   def deep_transverse(object)
     if object.is_a? String
@@ -65,6 +64,7 @@ class RuleParser
     return sentence
   end
 
+  # Interpreter.new.interpret(@rules)
   # ["FilterType == PASS", "CopyNumber >= 7", {"and"=>["Identifier != ", "Identifier != ."]}]
 
 end
