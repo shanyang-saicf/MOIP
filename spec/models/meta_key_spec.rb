@@ -36,10 +36,10 @@ RSpec.describe "Metakey::MetaKey", type: :model do
   end
 
   it "meta_key, sets the class id of known" do
-    line = '##FORMAT=<ID=CN,Number=1,Type=Float,Description="Copy number genotype for imprecise events">'
+    line = '##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">'
     @metaClass = MetaKeyFactory.new
     @class = @metaClass.findModel(line)
-    expect(@class.id).to eq("FORMAT")
+    expect(@class.id).to eq("INFO")
   end
 
 end
