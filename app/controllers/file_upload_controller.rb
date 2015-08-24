@@ -27,10 +27,11 @@ class FileUploadController < ApplicationController
 
   def create
     @fileupload = FileUpload.new( user_params )
+    @rule = params[:rule]
     @file = Paperclip.io_adapters.for(@fileupload.fileupload)
     hashJson = VcfParser.new.fileParse(@file)
     @expression = Expression.new(hashJson)
-    expressionArray = Interpreter.new.interpret(RuleUpload.find("CNV").sentence)
+    expressionArray = Interpreter.new.interpret(RuleUpload.find(@rule).sentence)
     newHash = []
     expressionArray.each do | expression |
        newHash = @expression.testEval(expression)
@@ -40,7 +41,7 @@ class FileUploadController < ApplicationController
       p variant
     end
 
-    render :json => JSON.pretty_generate(hashJson)
+    render :nothing => true#:json => JSON.pretty_generate(hashJson)
   end
 
   private
