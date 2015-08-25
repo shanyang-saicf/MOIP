@@ -14,7 +14,7 @@ class FormatParser < VcfParser
       end
       return data
     end
-    return line
+    return [line]
   end
 
 end

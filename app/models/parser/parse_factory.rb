@@ -16,15 +16,19 @@ module ParseFactory
     end
 
     def parseFormat(keys, values)
-      @format = FormatParser.new.parse(keys)
-      @mock = MockRep1DnaParser.new.parse(values)
-      formatHash = {}
-      count = 0
-      @format.each do | key |
-        formatHash[key] = @mock[count]
-        count = count + 1
+      begin
+        @format = FormatParser.new.parse(keys)
+        @mock = MockRep1DnaParser.new.parse(values)
+        formatHash = {}
+        count = 0
+        @format.each do | key | formatHash[key] = @mock[count]
+          count = count + 1
+        end
+        return formatHash
+      rescue
+        return {}
       end
-      return formatHash
+
     end
 
 end
