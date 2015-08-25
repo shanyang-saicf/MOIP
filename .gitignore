@@ -18,3 +18,6 @@
 
 #Ignore lock file
 Gemfile.lock
+
+#Ignore coverage files from simplecov
+coverage

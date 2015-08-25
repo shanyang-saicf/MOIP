@@ -39,7 +39,8 @@ RSpec.describe "Metakey::MetaKey", type: :model do
     line = '##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">'
     @metaClass = MetaKeyFactory.new
     @class = @metaClass.findModel(line)
-    expect(@class.id).to eq("INFO")
+    expect(@class.id).to eq("SVTYPE")
+    expect(@class.number).to eq("1")
   end
 
 end

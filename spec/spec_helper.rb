@@ -18,6 +18,8 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require "codeclimate-test-reporter"
 #require "rails/all"
+require 'simplecov'
+SimpleCov.start 'rails'
 require "rails_helper"
 CodeClimate::TestReporter.start
 RSpec.configure do |config|
