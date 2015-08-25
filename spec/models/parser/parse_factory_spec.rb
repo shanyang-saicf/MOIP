@@ -21,11 +21,11 @@ RSpec.describe "Parser::ParseFactory", type: :model do
     expect(line["ID"]).to eq("MCH4")
   end
 
-  # it "parse_factory, Parse IDs" do
-  #   line = {}
-  #   line["ID"] = parseFactory("ID", "COSM1686998;COSM20417")
-  #   expect(line["ID"][1]).to eq("COSM20417")
-  # end
+  it "parse_factory, Parse IDs" do
+    line = {}
+    line["ID"] = parseFactory("ID", "COSM1686998;COSM20417")
+    expect(line["ID"][1]).to eq("COSM20417")
+  end
 
   it "parse_factory, Parse REF" do
     line = {}
@@ -78,10 +78,10 @@ RSpec.describe "Parser::ParseFactory", type: :model do
     expect(line["FORMAT"]["CN"]).to eq("1.9")
   end
 
-  it "parse_factory, Parse FORMAT no :" do
-    line = {}
-    line["FORMAT"] = parseFormat("CN", "1.9")
-    # expect(line["FORMAT"]["CN"]).to eq("1.9")
-  end
+  # it "parse_factory, Parse FORMAT no :" do
+  #   line = {}
+  #   line["FORMAT"] = parseFormat("CN", "1.9")
+  #   expect(line["FORMAT"]["CN"]).to eq("1.9")
+  # end
 
 end
