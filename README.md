@@ -8,4 +8,4 @@
 
 ######http://localhost:3000/rule/index for a list of Rule Files
 ######cd ~/git/MOIP/public/rulefiles
-######curl -F "fileupload[fileupload]=@EML4_ALK_cosf479.vcf;type=text/directory" http://localhost:3000/file_upload/create
+######curl -F "fileupload[fileupload]=@EML4_ALK_cosf479.vcf;type=text/directory" -F "rule=CNV_v4dot1" http://localhost:3000/file_upload/create
