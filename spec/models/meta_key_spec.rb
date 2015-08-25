@@ -35,12 +35,37 @@ RSpec.describe "Metakey::MetaKey", type: :model do
     expect(@class.id).to eq("fileformat")
   end
 
-  it "meta_key, sets the class id of known" do
+  it "meta_key_info, sets the class id of known" do
     line = '##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">'
     @metaClass = MetaKeyFactory.new
     @class = @metaClass.findModel(line)
     expect(@class.id).to eq("SVTYPE")
     expect(@class.number).to eq("1")
   end
+
+  it "meta_key_alt, should parse" do
+    line = '##ALT=<ID=CNV,Description="Copy number variable region">'
+    @metaClass = MetaKeyFactory.new
+    @class = @metaClass.findModel(line)
+    expect(@class.id).to eq("CNV")
+    expect(@class.description).to eq("\"Copy number variable region\"")
+  end
+
+  it "meta_key_contig, should parse" do
+    line = '##contig=<ID=chr1,length=249250621,assembly=hg19>'
+    @metaClass = MetaKeyFactory.new
+    @class = @metaClass.findModel(line)
+    expect(@class.id).to eq("chr1")
+    expect(@class.length).to eq("249250621")
+    expect(@class.assembly).to eq("hg19")
+  end
+
+  it "meta_key_format, should parse" do
+    line = '##FORMAT=<ID=CN,Number=1,Type=Float,Description="Copy number genotype for imprecise events">'
+    @metaClass = MetaKeyFactory.new
+    @class = @metaClass.findModel(line)
+    expect(@class.id).to eq("CN")
+  end
+
 
 end
