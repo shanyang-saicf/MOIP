@@ -14,7 +14,7 @@ class MockRep1DnaParser < VcfParser
       end
       return data
     end
-    return line.squish
+    return [line.squish]
   end
 
 end
