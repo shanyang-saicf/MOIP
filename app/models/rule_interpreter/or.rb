@@ -7,10 +7,14 @@ class Or < Expression
   end
 
   def evaluate(line)
-    if (@expression1.is_a? Boolean) && (@expression2.is_a? Boolean)
-      return @expression1 || @expression2
-    else
-      return  (@expression1.evaluate(line) || @expression2.evaluate(line))
+    begin
+      if (@expression1.is_a? Boolean) && (@expression2.is_a? Boolean)
+        return @expression1 || @expression2
+      else
+        return  (@expression1.evaluate(line) || @expression2.evaluate(line))
+      end
+    rescue
+      return nil
     end
   end
 

@@ -4,10 +4,14 @@ class Not < Expression
   end
 
   def evaluate(line)
-    if (@expression.is_a? Boolean)
-      return !@expression
-    else
-      return  !@expression.evaluate(line)
+    begin
+      if (@expression.is_a? Boolean)
+        return !@expression
+      else
+        return  !@expression.evaluate(line)
+      end
+    rescue
+      return nil
     end
   end
 

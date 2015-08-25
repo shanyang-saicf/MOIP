@@ -6,11 +6,15 @@ class LessThan < Expression
   end
 
   def evaluate(line)
-    if (@expression1.is_a? String) && (@expression2.is_a? String)
-      value = line.deep_find(@expression1)
-      return value.nil? ? false : value.to_f < @expression2.to_f
-    else
-      return  (@expression1.evaluate(line) < @expression2.evaluate(line))
+    begin
+      if (@expression1.is_a? String) && (@expression2.is_a? String)
+        value = line.deep_find(@expression1)
+        return value.nil? ? false : value.to_f < @expression2.to_f
+      else
+        return  (@expression1.evaluate(line) < @expression2.evaluate(line))
+      end
+    rescue
+      return nil
     end
   end
 
