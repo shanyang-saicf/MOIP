@@ -88,13 +88,4 @@ RSpec.describe "Parser::ParseFactory", type: :model do
     expect(line["NOMATCH"]).to eq("12345")
   end
 
-  it "RULE_parser" do
-    json = JSON.parse(File.read("public/rulefiles/CNV_v4dot1.json"))
-    result = RuleParser.new.parseJson(json)
-    expect(result[0]).to eq("SVTYPE == CNV")
-    expect(result[1]).to eq("FILTER == PASS")
-    expect(result[2]).to eq("CN >= 7")
-    # expect(result[3]).to eq('{"and"=>["ID != ", "ID != ."]}')
-  end
-
 end
