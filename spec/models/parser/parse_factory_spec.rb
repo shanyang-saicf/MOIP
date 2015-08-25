@@ -81,6 +81,7 @@ RSpec.describe "Parser::ParseFactory", type: :model do
   it "parse_factory, Parse FORMAT no :" do
     line = {}
     line["FORMAT"] = parseFormat("CN", "1.9")
+    p line
     # expect(line["FORMAT"]["CN"]).to eq("1.9")
   end
 
