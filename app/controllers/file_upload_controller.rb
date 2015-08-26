@@ -41,7 +41,7 @@ class FileUploadController < ApplicationController
       p variant
     end
 
-    render :nothing => true#:json => JSON.pretty_generate(hashJson)
+    render :json => JSON.pretty_generate(hashJson)
   end
 
   private

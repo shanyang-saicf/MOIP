@@ -29,8 +29,8 @@ class Expression
     Equals.new(self, other)
   end
 
-  def evaluate(expression)
-    expression.evaluate
+  def evaluate(expression, line)
+    expression.evaluate(line)
   end
 
   def testEval(expression)
