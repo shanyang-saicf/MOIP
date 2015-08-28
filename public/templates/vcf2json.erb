@@ -1,0 +1,129 @@
+<!--"CHROM": "chrX",-->
+<!--"POS": "100611165",-->
+<!--"ID": "BT9",-->
+<!--"REF": "A",-->
+<!--"ALT": "T",-->
+<!--"QUAL": "35.0",-->
+<!--"FILTER": "PASS",-->
+<!--"INFO": {-->
+<!--"AF": "0",-->
+<!--"AO": "0",-->
+<!--"DP": "265",-->
+<!--"FAO": "0",-->
+<!--"FDP": "265",-->
+<!--"FR": ".",-->
+<!--"FRO": "265",-->
+<!--"FSAF": "0",-->
+<!--"FSAR": "0",-->
+<!--"FSRF": "134",-->
+<!--"FSRR": "131",-->
+<!--"FWDB": "-0.0102482",-->
+<!--"FXX": "0",-->
+<!--"HRUN": "1",-->
+<!--"HS": null,-->
+<!--"LEN": "1",-->
+<!--"MLLD": "181.421",-->
+<!--"QD": "0.528336",-->
+<!--"RBI": "0.019902",-->
+<!--"REFB": "1.01026E-5",-->
+<!--"REVB": "0.0170606",-->
+<!--"RO": "264",-->
+<!--"SAF": "0",-->
+<!--"SAR": "0",-->
+<!--"SRF": "134",-->
+<!--"SRR": "130",-->
+<!--"SSEN": "0",-->
+<!--"SSEP": "0",-->
+<!--"SSSB": "3.28802E-8",-->
+<!--"STB": "0.5",-->
+<!--"STBP": "1",-->
+<!--"TYPE": "snp",-->
+<!--"VARB": "0",-->
+<!--"OID": "BT9",-->
+<!--"OPOS": "100611165",-->
+<!--"OREF": "A",-->
+<!--"OALT": "T",-->
+<!--"OMAPALT": "T",-->
+<!--"FUNC": {-->
+<!--"transcript": "NM_000061.2",-->
+<!--"gene": "BTK",-->
+<!--"location": "exonic",-->
+<!--"exon": "15"-->
+<!--}-->
+<!--},-->
+<!--"FORMAT": {-->
+<!--"GT": "0/0",-->
+<!--"GQ": "35",-->
+<!--"DP": "265",-->
+<!--"FDP": "265",-->
+<!--"RO": "264",-->
+<!--"FRO": "265",-->
+<!--"AO": "0",-->
+<!--"FAO": "0",-->
+<!--"AF": "0",-->
+<!--"SAR": "0",-->
+<!--"SAF": "0",-->
+<!--"SRF": "134",-->
+<!--"SRR": "130",-->
+<!--"FSAR": "0",-->
+<!--"FSAF": "0",-->
+<!--"FSRF": "134",-->
+<!--"FSRR": "131"-->
+<!--}-->
+
+=HEADER
+<% require 'json' %>
+{
+"HEADER": {
+"options": <%= options.to_h.to_json %>,
+"files": <%= ARGV %>,
+"version": "<%= BIOVCF_VERSION %>"
+},
+"BODY": [
+=BODY
+<% sample_num = 0
+   sample_name = nil
+   sample_size = header.samples.size
+%>
+{
+"CHROM": "<%= rec.chrom %>",
+"POS": <%= rec.pos %>,
+"ID": <%= rec.id %>,
+"REF": "<%= rec.ref %>",
+"ALT": "<%= rec.alt[0] %>",
+"QUAL": "<%= rec.qual %>,
+"FILTER": "<%= rec.filter %>,
+"INFO": {"AF": <%= rec.info.af %>,
+"AO": <%= rec.info.ao %>,
+"FOA": <%= rec.info.foa %>,
+"FDP": <%= rec.info.fdp %>,
+"FR": <%= rec.info.fr %>},
+"FRO": <%= rec.info.fro %>},
+"FSAF": <%= rec.info.fsaf %>},
+"FSAR": <%= rec.info.fsar %>},
+"FSRF": <%= rec.info.fsrf %>},
+"FSRR": <%= rec.info.fsrr %>},
+"FWDB": <%= rec.info.fwdb %>},
+"FXX": <%= rec.info.fxx %>},
+"HRUN": <%= rec.info.hrun %>},
+"HS": <%= rec.info.hs %>}
+},
+"samples" : {
+<% rec.each_sample do |s| %>
+    <% if not s.empty?
+         sample_name = header.samples[sample_num]
+    %>
+        <%= (sample_num!=0 ? "," : "" ) %>
+        <% sample_num += 1%>
+        "<%= sample_name %>": {
+        <% header.meta['FORMAT'].each_key do |k| %>
+            "<%= k %>": <%= s[k].to_json %><%= (k==header.meta['FORMAT'].keys.last ? "" : "," ) %>
+        <% end %>
+        }
+    <% end %>
+<% end %>
+}
+}
+=FOOTER
+]
+}
