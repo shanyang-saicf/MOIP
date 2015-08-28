@@ -1,8 +1,8 @@
-require 'bio-vcf/template'
+# require 'bio-vcf/template'
 
 class VcfParser
-  include BioVcf
-  include Bio
+  # include BioVcf
+  # include Bio
   include ParseFactory
 
   def fileParse(file)
@@ -12,7 +12,7 @@ class VcfParser
     hashJson = []
     # template = Bio::Template.new("./public/templates/vcf2json.erb")
     begin
-      header = VcfHeader.new
+      # header = VcfHeader.new
       File.open(file.path).each do |line|
         # if line =~ /^##/
         #   header.add(line)
