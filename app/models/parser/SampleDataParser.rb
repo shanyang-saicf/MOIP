@@ -1,4 +1,4 @@
-class MockRep1DnaParser < VcfParser
+class SampleDataParser < VcfParser
 
   attr_accessor :repDna
 
