@@ -28,14 +28,14 @@ RSpec.describe "Parser::ParseFactory", type: :model do
 
   it "FORMAT_parser" do
     line = {}
-    line["FORMAT"] = parseFormat("GT:GQ:CN", "./.:0:1.9")
-    expect(line["FORMAT"]["CN"]).to eq("1.9")
+    line["FORMAT"] = parseFormat("GT:GQ:CN", ["./.:0:1.9"])
+    expect(line["FORMAT"][0]["CN"]).to eq("1.9")
   end
 
   it "FORMAT_parser no :" do
     line = {}
-    line["FORMAT"] = parseFormat("CN", "1.9")
-    expect(line["FORMAT"]["CN"]).to eq("1.9")
+    line["FORMAT"] = parseFormat("CN", ["1.9"])
+    expect(line["FORMAT"][0]["CN"]).to eq("1.9")
   end
 
   it "ID_parser" do
