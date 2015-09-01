@@ -31,7 +31,7 @@ gem "mongoid-paperclip", :require => "mongoid_paperclip"
 #gem for uploading to amazon cloud..if we need it
 gem 'aws-sdk', '~> 1.3.4'
 
-#gem 'wongi-engine'
+gem 'bio-vcf'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

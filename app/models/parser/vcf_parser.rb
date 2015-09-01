@@ -1,8 +1,7 @@
-# require 'bio-vcf/template'
+require 'bio-vcf/template'
 
 class VcfParser
-  # include BioVcf
-  # include Bio
+  include BioVcf
   include ParseFactory
 
   def fileParse(file)
@@ -10,36 +9,36 @@ class VcfParser
     @headers = HeaderKey.new
 
     hashJson = []
-    # template = Bio::Template.new("./public/templates/vcf2json.erb")
     begin
-      # header = VcfHeader.new
+      # header = VcfHeader.new(true)
       File.open(file.path).each do |line|
         # if line =~ /^##/
         #   header.add(line)
         #   next
         # end
-        # # p header.lines
         # fields = VcfLine.parse(line)
         # rec = VcfRecord.new(fields,header)
         #
-        # parsedHash = {}
-        # parsedHash[:CHROM] = rec.chrom
-        # parsedHash[:POS] = rec.pos
-        # parsedHash[:ID] = rec.id
-        # parsedHash[:REF] = rec.ref
-        # parsedHash[:ALT] = rec.alt[0]
-        # parsedHash[:QUAL] = rec.qual
-        # parsedHash[:FILTER] = rec.filter
-        # p header.samples.size
-        # if !rec.missing_samples?
-        #   rec.each_sample do | s |
-        #     p s
-        #   end
+        #
+        #
+        # acutalSamples = fields[9..-1]
+        # acutalSamples.each do | sample |
         # end
-        # parsedHash[:INFO] = rec.info
-        # parsedHash[:FORMAT] = rec.format.each
-
-        # hashJson << parsedHash
+        # count = 0
+        # rec.ids.each do | id |
+        #   parsedHash = {}
+        #   parsedHash[:CHROM] = rec.chrom
+        #   parsedHash[:POS] = rec.pos
+        #   parsedHash[:ID] = id
+        #   parsedHash[:REF] = rec.ref
+        #   parsedHash[:ALT] = rec.alt[count]
+        #   count = count + 1
+        #   parsedHash[:QUAL] = rec.qual
+        #   parsedHash[:FILTER] = rec.filter
+        #   parsedHash[:INFO] = rec.info
+        #   parsedHash[:FORMAT] = rec.format
+        #   hashJson << parsedHash
+        # end
 
         if MetaKeyFactory.is_key(line)
           @metaClass.findModel(line)
@@ -52,9 +51,6 @@ class VcfParser
             hashJson << parseLineData(data, @headers)
           end
         end
-        # template.header(binding)
-        # p template.body(binding)
-        # p template
       end
     end
     hashJson
@@ -65,9 +61,9 @@ class VcfParser
       hashMap = {}
       count = 0
       headers.headers.each { |header|
-        if (header == "FORMAT" && (!data[count].nil? || !data[count+1].nil?))
+        if (header == "FORMAT" && (!data[count].nil? || !data[count+1..-1].nil?))
           hashMap[header] = ''
-          hashMap[header] = parseFormat(data[count], data[count+1])
+          hashMap[header] = parseFormat(data[count], data[count+1..-1])
           count = count + 2
         else
           hashMap[header] = ''

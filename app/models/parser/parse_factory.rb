@@ -15,16 +15,18 @@ module ParseFactory
       return clazz
     end
 
-    def parseFormat(keys, values)
+    def parseFormat(keys, samples)
       begin
+        formatArray = []
         @format = FormatParser.new.parse(keys)
-        @mock = MockRep1DnaParser.new.parse(values)
-        formatHash = {}
-        count = 0
-        @format.each do | key | formatHash[key] = @mock[count]
-          count = count + 1
+        samples.each do | sample |
+          @sample = MockRep1DnaParser.new.parse(sample)
+
+          formatHash = Hash[@format.zip(@sample.map {|i| i.include?(',') ? (i.split(",")) : i} )]
+
+          formatArray << formatHash
         end
-        return formatHash
+        return formatArray
       rescue
         return {}
       end

@@ -45,7 +45,7 @@ class Expression
 
 
   # @expression = Expression.new(hashJson)
-  #@expression.testEval(And.new(Equals.new("FXX", "0.00267019"), Not.new(Equals.new("POS", "10032611165"))))  #Same as @expression.testEval((Equals.new("FXX", "0.00267019") & Equals.new("POS", "100611165")))
+  # @expression.testEval(And.new(Equals.new("FXX", "0.00267019"), Not.new(Equals.new("POS", "10032611165"))))  #Same as @expression.testEval((Equals.new("FXX", "0.00267019") & Equals.new("POS", "100611165")))
   # @expression.testEval((Equals.new("POS", "100611165") & (Equals.new("transcript", "NM_000061.2"))))
   #p "123 = 123 " + @expression.evaluate(Equals.new("123", "123")).to_s
   #p "345 > 344 " + @expression.evaluate(GreaterThan.new("345", "344")).to_s
