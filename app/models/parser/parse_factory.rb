@@ -20,11 +20,9 @@ module ParseFactory
         formatArray = []
         @format = FormatParser.new.parse(keys)
         samples.each do | sample |
-          @sample = MockRep1DnaParser.new.parse(sample)
+          @sample = SampleParser.new.parse(sample)
 
-          formatHash = Hash[@format.zip(@sample.map {|i| i.include?(',') ? (i.split(",")) : i} )]
-
-          formatArray << formatHash
+          formatArray << Hash[@format.zip(@sample.map {|i| i.include?(',') ? (i.split(",")) : i} )]
         end
         return formatArray
       rescue

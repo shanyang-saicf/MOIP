@@ -1,4 +1,4 @@
-class SampleDataParser < VcfParser
+class SampleParser < VcfParser
 
   attr_accessor :repDna
 
