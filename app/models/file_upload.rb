@@ -4,6 +4,9 @@ class FileUpload
 
   has_mongoid_attached_file :fileupload
 
+  field :_id, :type => String
+  field :data, :type => Array
+
 
   validates_attachment :fileupload, content_type: { content_type: ['text/directory'] }
 

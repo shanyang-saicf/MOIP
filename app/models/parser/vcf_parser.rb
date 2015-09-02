@@ -1,7 +1,6 @@
 require 'bio-vcf/template'
 
 class VcfParser
-  include BioVcf
   include ParseFactory
 
   def fileParse(file)
@@ -10,36 +9,8 @@ class VcfParser
 
     hashJson = []
     begin
-      # header = VcfHeader.new(true)
-      File.open(file.path).each do |line|
-        # if line =~ /^##/
-        #   header.add(line)
-        #   next
-        # end
-        # fields = VcfLine.parse(line)
-        # rec = VcfRecord.new(fields,header)
-        #
-        #
-        #
-        # acutalSamples = fields[9..-1]
-        # acutalSamples.each do | sample |
-        # end
-        # count = 0
-        # rec.ids.each do | id |
-        #   parsedHash = {}
-        #   parsedHash[:CHROM] = rec.chrom
-        #   parsedHash[:POS] = rec.pos
-        #   parsedHash[:ID] = id
-        #   parsedHash[:REF] = rec.ref
-        #   parsedHash[:ALT] = rec.alt[count]
-        #   count = count + 1
-        #   parsedHash[:QUAL] = rec.qual
-        #   parsedHash[:FILTER] = rec.filter
-        #   parsedHash[:INFO] = rec.info
-        #   parsedHash[:FORMAT] = rec.format
-        #   hashJson << parsedHash
-        # end
 
+      File.open(file.path).each do |line|
         if MetaKeyFactory.is_key(line)
           @metaClass.findModel(line)
         elsif MetaKeyFactory.is_header(line)
@@ -48,7 +19,11 @@ class VcfParser
           hashMap = {}
           data = line.split("\t")
           if @headers.headers.length == data.length
-            hashJson << parseLineData(data, @headers)
+            parsedData = parseLineData(data, @headers)
+            if parsedData["ID"].is_a? Array
+              parsedData = seperateComboData(parsedData)
+            end
+            hashJson << parsedData
           end
         end
       end
@@ -60,11 +35,12 @@ class VcfParser
   def parseLineData(data, headers)
       hashMap = {}
       count = 0
+      # data[0..8] are normal data
+      # data[9..-1] are sample data for format
       headers.headers.each { |header|
-        if (header == "FORMAT" && (!data[count].nil? || !data[count+1..-1].nil?))
+        if (header == "FORMAT" && (!data[count].nil? || !data[count+1].nil?))
           hashMap[header] = ''
           hashMap[header] = parseFormat(data[count], data[count+1..-1])
-          count = count + 2
         else
           hashMap[header] = ''
           hashMap[header] = parseFactory(header, data[count])
@@ -74,14 +50,8 @@ class VcfParser
       return hashMap
   end
 
-  def formatKey(format, mock)
-    formatHash = {}
-    count = 0
-    format.each do | key |
-      formatHash[key] = mock[count]
-      count = count + 1
-    end
-    formatHash
+  def seperateComboData(data)
+    length = data["ID"].length
   end
 
 end

@@ -4,19 +4,11 @@ Rails.application.routes.draw do
 
   get 'file_upload/index'
 
-  get 'file_upload/new'
-
   get 'file_upload/show'
 
-  get 'image/index'
+  get 'file_upload/moi'
 
-  get 'image/new'
-
-  get 'image/show'
-
-  post 'image/create'
-
-  post 'file_upload/create'
+  post 'file_upload/vcf_upload'
 
   post 'file_upload/new_rule'
 

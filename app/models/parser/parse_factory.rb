@@ -21,7 +21,6 @@ module ParseFactory
         @format = FormatParser.new.parse(keys)
         samples.each do | sample |
           @sample = SampleParser.new.parse(sample)
-
           formatArray << Hash[@format.zip(@sample.map {|i| i.include?(',') ? (i.split(",")) : i} )]
         end
         return formatArray
