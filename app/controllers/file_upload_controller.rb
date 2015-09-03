@@ -13,6 +13,7 @@ class FileUploadController < ApplicationController
 
   def moi
     begin
+      raise Errors::NotFound if params[:rule].nil? || params[:vcf_file].nil?
       @rule = params[:rule]
       @file = params[:vcf_file]
       @expression = Expression.new(FileUpload.find(@file).data)
@@ -22,26 +23,21 @@ class FileUploadController < ApplicationController
          newHash = @expression.testEval(expression)
         @expression.filterHash(newHash)
       end
-    rescue
-
+      render :json => JSON.pretty_generate(newHash)
     end
-    render :json => JSON.pretty_generate(newHash)
   end
 
   def show
   end
 
   def new_rule
-    begin
-      @ruleupload = RuleUpload.new(params.require(:ruleupload).permit(:ruleupload))
-      json = JSON.parse(Paperclip.io_adapters.for(@ruleupload.ruleupload).read)
-      @ruleupload.write_attribute(:_id, File.basename(@ruleupload.ruleupload.original_filename, File.extname(@ruleupload.ruleupload.original_filename)))
-      @ruleupload.write_attribute(:rule, json)
-      @ruleupload.write_attribute(:sentence, RuleParser.new.parseJson(json))
-      @ruleupload.save
-    rescue
+    @ruleupload = RuleUpload.new(params.require(:ruleupload).permit(:ruleupload))
+    json = JSON.parse(Paperclip.io_adapters.for(@ruleupload.ruleupload).read)
+    @ruleupload.write_attribute(:_id, File.basename(@ruleupload.ruleupload.original_filename, File.extname(@ruleupload.ruleupload.original_filename)))
+    @ruleupload.write_attribute(:rule, json)
+    @ruleupload.write_attribute(:sentence, RuleParser.new.parseJson(json))
+    @ruleupload.save
 
-    end
     render :nothing => true
   end
 
