@@ -11,15 +11,15 @@ class Interpreter
     testArray = []
     count = 0
     sentenceArray.each do | aSentence |
-      if aSentence.is_a? Enumerable
-        aSentence.each_key { | key |
-          if aSentence[key].is_a? Array
-            aSentence[key].each do | singleArrayObject |
-
-            end
-          end
-        }
-      elsif aSentence.include? "and"
+      # if aSentence.is_a? Enumerable
+      #   aSentence.each_key { | key |
+      #     if aSentence[key].is_a? Array
+      #       aSentence[key].each do | singleArrayObject |
+      #
+      #       end
+      #     end
+      #   }
+      if aSentence.include? "and"
         testArray[count] = andBuilder(aSentence)
         count = count+1
       elsif aSentence.include? "or"
@@ -52,7 +52,7 @@ class Interpreter
         #interpret(sentence)
       end
     end
-    Or.new(otherArray[0], otherArray[1])
+    Or.new(otherArray)
   end
 
   def andBuilder(aSentence)
@@ -66,7 +66,7 @@ class Interpreter
         #interpret(sentence)
       end
     end
-    And.new(otherArray[0], otherArray[1], otherArray[2])
+    And.new(otherArray)
   end
 
   def logicCase(sentence)
@@ -79,10 +79,10 @@ class Interpreter
         Not.new(Equals.new(otherArray[0].squish, otherArray[1].squish))
       when sentence.match(">=")
         otherArray = sentenceSplitter(sentence, ">=")
-        Or.new(Equals.new(otherArray[0], otherArray[1]), GreaterThan.new(otherArray[0], otherArray[1]))
+        Or.new([Equals.new(otherArray[0], otherArray[1]), GreaterThan.new(otherArray[0], otherArray[1])])
       when sentence.match("<=")
         otherArray = sentenceSplitter(sentence, ">=")
-        Or.new(Equals.new(otherArray[0], otherArray[1]), LessThan.new(otherArray[0], otherArray[1]))
+        Or.new([Equals.new(otherArray[0], otherArray[1]), LessThan.new(otherArray[0], otherArray[1])])
       when sentence.match(">")
         otherArray = sentenceSplitter(sentence, ">")
         GreaterThan.new(otherArray[0], otherArray[1])
