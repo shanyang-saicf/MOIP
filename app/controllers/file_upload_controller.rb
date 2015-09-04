@@ -36,8 +36,9 @@ class FileUploadController < ApplicationController
     @ruleupload.write_attribute(:_id, File.basename(@ruleupload.ruleupload.original_filename, File.extname(@ruleupload.ruleupload.original_filename)))
     @ruleupload.write_attribute(:rule, json)
     @ruleupload.write_attribute(:sentence, RuleParser.new.parseJson(json))
-    @ruleupload.save
-
+    sentence = RuleParser.new.parseJson(json)
+    expressionArray = Interpreter.new.interpret(sentence)
+    # @ruleupload.save!
     render :nothing => true
   end
 

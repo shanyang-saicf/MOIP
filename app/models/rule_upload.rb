@@ -5,7 +5,6 @@ class RuleUpload
 
   has_mongoid_attached_file :ruleupload
 
-  # do_not_validate_attachment_file_type :ruleupload
   validates_attachment :ruleupload, content_type: { content_type: ['application/json'] }
 
   field :_id, :type => String

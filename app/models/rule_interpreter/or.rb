@@ -1,21 +1,31 @@
 class Or < Expression
 
-  def initialize(expression1, expression2)
-    @expression1 = expression1
-    @expression2 = expression2
-    # @expression3 = expression3
+  def initialize(expression)
+    if expression.is_a? Array
+      @expression = expression
+    else
+      raise 'Expected Array value'
+    end
+
   end
 
   def evaluate(line)
     begin
-      if (@expression1.is_a? Boolean) && (@expression2.is_a? Boolean)
-        return @expression1 || @expression2
+      if @expression.all? { |x| x.is_a? Boolean }
+        return applyLogic(@expression)
       else
-        return  (@expression1.evaluate(line) || @expression2.evaluate(line))
+        @expression.all { | x | x.evaluate(line) }
       end
     rescue
       return nil
     end
   end
 
+  def applyLogic(expression)
+    if expression.detect { |n| n == true}
+      return true
+    else
+      return false
+    end
+  end
 end

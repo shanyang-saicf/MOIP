@@ -4,13 +4,22 @@ require 'and'
 class Interpreter
 
   # ["FilterType == PASS", "CopyNumber >= 7", {"and"=>["Identifier != ", "Identifier != ."]}]
-  # ["FilterType == PASS", "TODO >= ?", {"or"=>["Protein == ", "Protein != p.(=)"]}, {"or"=>["Function == ", {"and"=>["Function != synonymous", {"or"=>["Function contains refallele", "Function contains unknown", "Function contains missense", "Function contains nonsense", "Function contains frameshiftinsertion", "Function contains frameshiftdeletion", "Function contains nonframeshiftinsertion", "Function contains nonframeshiftdeletion", "Function contains stoploss", "Function contains frameshiftblocksubstitution", "Function contains nonframeshiftblocksubstitution"]}]}]}, {"and"=>["Location != intronic", {"or"=>[{"and"=>["Identifier != ", "Identifier != ."]}, {"and"=>["Oncominevariantclass != ", "Exxon != ", "Function != ", "Location != "]}]}]}, {"and"=>["alleleFrequency != null", "alleleFrequency >= 0.05", "alternativeObservationCount != null", "alternativeObservationCount >= 25"]}, {"or"=>[{"and"=>["Identifier != ", "Identifier != ."]}, {"and"=>["Oncominevariantclass != null", {"or"=>["Oncominevariantclass == deleterious", "Oncominevariantclass == hotspot"]}]}]}]
+  # ["SVTYPE == SNV", "FILTER == PASS", "TODO >= ?", {"or"=>["Protein == ", "Protein != p.(=)"]}, {"or"=>["Function == ", {"and"=>["Function != synonymous", {"or"=>["Function contains refallele", "Function contains unknown", "Function contains missense", "Function contains nonsense", "Function contains frameshiftinsertion", "Function contains frameshiftdeletion", "Function contains nonframeshiftinsertion", "Function contains nonframeshiftdeletion", "Function contains stoploss", "Function contains frameshiftblocksubstitution", "Function contains nonframeshiftblocksubstitution"]}]}]}, {"and"=>["Location != intronic", {"or"=>[{"and"=>["ID != ", "ID != ."]}, {"and"=>["Oncominevariantclass != ", "Exxon != ", "Function != ", "Location != "]}]}]}, {"and"=>["alleleFrequency != null", "alleleFrequency >= 0.05", "alternativeObservationCount != null", "alternativeObservationCount >= 25"]}, {"or"=>[{"and"=>["Identifier != ", "Identifier != ."]}, {"and"=>["Oncominevariantclass != null", {"or"=>["Oncominevariantclass == deleterious", "Oncominevariantclass == hotspot"]}]}]}]
+
 
   def interpret(sentenceArray)
     testArray = []
     count = 0
     sentenceArray.each do | aSentence |
-      if aSentence.include? "and"
+      if aSentence.is_a? Enumerable
+        aSentence.each_key { | key |
+          if aSentence[key].is_a? Array
+            aSentence[key].each do | singleArrayObject |
+
+            end
+          end
+        }
+      elsif aSentence.include? "and"
         testArray[count] = andBuilder(aSentence)
         count = count+1
       elsif aSentence.include? "or"
@@ -24,6 +33,14 @@ class Interpreter
     testArray
   end
 
+  def enumerableDivider(object)
+    if object.is_a? Enumerable
+      object.each_key { |key |
+
+      }
+    end
+  end
+
   def orBuilder(aSentence)
     otherArray = []
     count = 0
@@ -32,7 +49,7 @@ class Interpreter
         otherArray[count] = logicCase(sentence)
         count = count+1
       elsif sentence.is_a? Enumerable
-        # interpret(sentence)
+        #interpret(sentence)
       end
     end
     Or.new(otherArray[0], otherArray[1])
@@ -46,7 +63,7 @@ class Interpreter
         otherArray[count] = logicCase(sentence)
         count = count+1
       elsif sentence.is_a? Enumerable
-        # interpret(sentence)
+        #interpret(sentence)
       end
     end
     And.new(otherArray[0], otherArray[1], otherArray[2])
