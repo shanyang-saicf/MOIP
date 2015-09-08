@@ -3,22 +3,60 @@ require 'and'
 
 class Interpreter
 
-  # ["FilterType == PASS", "CopyNumber >= 7", {"and"=>["Identifier != ", "Identifier != ."]}]
-  # ["SVTYPE == SNV", "FILTER == PASS", "TODO >= ?", {"or"=>["Protein == ", "Protein != p.(=)"]}, {"or"=>["Function == ", {"and"=>["Function != synonymous", {"or"=>["Function contains refallele", "Function contains unknown", "Function contains missense", "Function contains nonsense", "Function contains frameshiftinsertion", "Function contains frameshiftdeletion", "Function contains nonframeshiftinsertion", "Function contains nonframeshiftdeletion", "Function contains stoploss", "Function contains frameshiftblocksubstitution", "Function contains nonframeshiftblocksubstitution"]}]}]}, {"and"=>["Location != intronic", {"or"=>[{"and"=>["ID != ", "ID != ."]}, {"and"=>["Oncominevariantclass != ", "Exxon != ", "Function != ", "Location != "]}]}]}, {"and"=>["alleleFrequency != null", "alleleFrequency >= 0.05", "alternativeObservationCount != null", "alternativeObservationCount >= 25"]}, {"or"=>[{"and"=>["Identifier != ", "Identifier != ."]}, {"and"=>["Oncominevariantclass != null", {"or"=>["Oncominevariantclass == deleterious", "Oncominevariantclass == hotspot"]}]}]}]
-
+  # ["SVTYPE == SNV",                                                                         aSentence
+  #  "FILTER == PASS",                                                                        aSentence
+  #  "TODO >= ?",                                                                             aSentence
+  #  {"or"=>["Protein == ",                                                                   Enumerable=>Array=>aSentence
+  #          "Protein != p.(=)"                                                               aSentence
+  #         ]
+  #  },                                                                                       RETURN << testArray
+  #  {"or"=>["Function == ",                                                                  Enumerable=>Array=>aSentence
+  #          {"and"=>["Function != synonymous",                                               Enumerable=>Array=>aSentence
+  #                   {"or"=>["Function contains refallele",                                  Enumerable=>Array=>aSentence
+  #                           "Function contains unknown",                                    aSentence
+  #                           "Function contains missense",                                   aSentence
+  #                           "Function contains nonsense",                                   aSentence
+  #                           "Function contains frameshiftinsertion",                        aSentence
+  #                           "Function contains frameshiftdeletion",                         aSentence
+  #                           "Function contains nonframeshiftinsertion",                     aSentence
+  #                           "Function contains nonframeshiftdeletion",                      aSentence
+  #                           "Function contains stoploss",                                   aSentence
+  #                           "Function contains frameshiftblocksubstitution",                aSentence
+  #                           "Function contains nonframeshiftblocksubstitution"              aSentence
+  #                          ]
+  #                   }                                                                       RETURN << enumArray
+  #                 ]
+  #          }                                                                                RETURN << enumArray
+  #         ]
+  # },                                                                                        RETURN << testArray
+  # {"and"=>["Location != intronic",                                                          Enumerable=>Array=>aSentence
+  #          {"or"=>[{"and"=>["ID != ",                                                       Enumerable=>Array=>Enumerable=>aSentence
+  #                           "ID != ."                                                       aSentence
+  #                          ]
+  #                  },                                                                       RETURN << enumArray
+  #                  {"and"=>["Oncominevariantclass != ",                                     Enumerable=>Array=>aSentence
+  #                           "Exxon != ", "Function != ",                                    aSentence
+  #                           "Location != "                                                  aSentence
+  #                          ]
+  #                  }                                                                        RETURN << enumArray
+  #                 ]
+  #          }                                                                                RETURN << enumArray
+  #         ]
+  # },                                                                                        RETURN << testArray
+  # {"and"=>["alleleFrequency != null",                                                       Enumerable=>Array=>aSentence
+  #          "alleleFrequency >= 0.05",                                                       aSentence
+  #          "alternativeObservationCount != null",                                           aSentence
+  #          "alternativeObservationCount >= 25"]},                                           aSentence
+  #          {"or"=>[{"and"=>["Identifier != ",                                               Enumerable=>Array=>Enumerable=>Array=>aSentence
+  #                           "Identifier != ."]},                                            aSentence
+  #                           {"and"=>["Oncominevariantclass != null",                        Enumerable=>Array=>aSentence
+  #                                    {"or"=>["Oncominevariantclass == deleterious",         Enumerable=>Array=>aSentence
+  #                                            "Oncominevariantclass == hotspot"]}]}]}]       aSentence RETURN << testArray
 
   def interpret(sentenceArray)
     testArray = []
     count = 0
     sentenceArray.each do | aSentence |
-      # if aSentence.is_a? Enumerable
-      #   aSentence.each_key { | key |
-      #     if aSentence[key].is_a? Array
-      #       aSentence[key].each do | singleArrayObject |
-      #
-      #       end
-      #     end
-      #   }
       if aSentence.include? "and"
         testArray[count] = andBuilder(aSentence)
         count = count+1
@@ -34,11 +72,40 @@ class Interpreter
   end
 
   def enumerableDivider(object)
-    if object.is_a? Enumerable
+    enumArray = []
+    if object.is_a? Hash
       object.each_key { |key |
 
+        if key == "and"
+          enumArray << andBuilder(object)
+          break
+        elsif key == "or"
+          enumArray << orBuilder(object)
+          break
+        end
+
+        if object[key].is_a? String
+          enumArray << logicCase(object[key])
+        elsif object[key].is_a? Array
+          enumArray << arrayDivider(object[key])
+        end
       }
     end
+    return enumArray
+  end
+
+  def arrayDivider(object)
+    placeHolder = []
+    if object.is_a? Array
+      object.each do | arrayObject |
+        if arrayObject.is_a? String
+          placeHolder << logicCase(arrayObject)
+        elsif arrayObject.is_a? Hash
+          placeHolder << enumerableDivider(arrayObject)
+        end
+      end
+    end
+    return placeHolder
   end
 
   def orBuilder(aSentence)
@@ -48,8 +115,12 @@ class Interpreter
       if sentence.is_a? String
         otherArray[count] = logicCase(sentence)
         count = count+1
-      elsif sentence.is_a? Enumerable
-        #interpret(sentence)
+      elsif sentence.is_a? Array
+        otherArray[count] = arrayDivider(sentence)
+        count = count+1
+      elsif sentence.is_a? Hash
+        otherArray[count] = enumerableDivider(sentence)
+        count = count+1
       end
     end
     Or.new(otherArray)
@@ -62,8 +133,12 @@ class Interpreter
       if sentence.is_a? String
         otherArray[count] = logicCase(sentence)
         count = count+1
-      elsif sentence.is_a? Enumerable
-        #interpret(sentence)
+      elsif sentence.is_a? Array
+        otherArray[count] = arrayDivider(sentence)
+        count = count+1
+      elsif sentence.is_a? Hash
+        otherArray[count] = enumerableDivider(sentence)
+        count = count+1
       end
     end
     And.new(otherArray)
