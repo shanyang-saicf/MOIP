@@ -1,92 +1,59 @@
 {
-    "and": [
+    "VariantFilter": [
         {
-            "FilterType": {
+            "SVTYPE": {
+                "Operator1": "==",
+                "Value1": "Fusion"
+            }
+        }
+    ],
+    "PassFilter": [
+        {
+            "FILTER": {
                 "Operator1": "==",
                 "Value1": "PASS"
-            },
-            "ReadDepth": {
+            }
+        }
+    ],
+    "GeneFusionReadDepthFilter": [
+        {
+            "DP": {
                 "Operator1": ">=",
                 "Value1": "25"
-            },
-            "GeneFusionEGFRReadDepth--TODO": {
-                "and": [
-                    {
-                        "ReadDepth": {
-                            "Operator1": "!=",
-                            "Value1": "null"
-                        }
-                    },
-                    {
-                        "or": [
-                            {
-                                "and": [
-                                    {
-                                        "Identifier": {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    },
-                                    {
-                                        "Identifier": {
-                                            "Operator1": "contains",
-                                            "Value1": "EGFR-EGFR.E1E8.DelPositive"
-                                        }
-                                    },
-                                    {
-                                        "ReadDepth": {
-                                            "Operator1": ">=",
-                                            "Value1": "1000"
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "true": "true"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "or": [
+            }
+        }
+    ],
+    "GeneFusionEGFRReadDepthFilter": [
+        {
+            "and": [
                 {
-                    "Identifier": {
-                        "Operator1": "!=",
-                        "Value1": "COSM250061"
+                    "ID": {
+                        "Operator1": "startsWith",
+                        "Value1": "EGFR-EGFR.E1E8.DelPositive"
                     }
                 },
                 {
-                    "NonHotspot-TODO": {
-                        "and": [
-                            {
-                                "Gene": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "OncamineVariantClass": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    ]
-                                }
-                            }
-                        ]
+                    "DP": {
+                        "Operator1": ">=",
+                        "Value1": "1000"
+                    }
+                }
+            ]
+        }
+    ],
+    "IdentifierFilter": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": ""
+                    }
+                },
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
                     }
                 }
             ]
