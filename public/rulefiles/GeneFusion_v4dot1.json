@@ -28,7 +28,7 @@
             "and": [
                 {
                     "ID": {
-                        "Operator1": "startsWith",
+                        "Operator1": "contains",
                         "Value1": "EGFR-EGFR.E1E8.DelPositive"
                     }
                 },
