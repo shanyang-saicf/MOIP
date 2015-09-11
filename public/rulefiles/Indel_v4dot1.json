@@ -1,287 +1,275 @@
 {
-    "and": [
+    "VariantFilter": [
         {
-            "FilterType": {
+            "SVTYPE": {
+                "Operator1": "==",
+                "Value1": "Indel?? TODO"
+            }
+        }
+    ],
+    "PassFilter": [
+        {
+            "FILTER": {
                 "Operator1": "==",
                 "Value1": "PASS"
-            },
-            "Protein": {
-                "or": [
-                    {
-                        "Operator1": "==",
-                        "Value1": ""
-                    },
-                    {
-                        "Operator1": "!=",
-                        "Value1": "p.(=)"
-                    }
-                ]
-            },
-            "Function": {
-                "or": [
-                    {
-                        "Operator1": "==",
-                        "Value1": ""
-                    },
-                    {
-                        "and": [
-                            {
-                                "Operator1": "!=",
-                                "Value1": "synonymous"
-                            },
-                            {
-                                "or": [
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "refallele"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "unknown"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "missense"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "nonsense"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "frameshiftinsertion"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "frameshiftdeletion"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "nonframeshiftinsertion"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "nonframeshiftdeletion"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "stoploss"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "frameshiftblocksubstitution"
-                                    },
-                                    {
-                                        "Operator1": "contains",
-                                        "Value1": "nonframeshiftblocksubstitution"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            "Intronic": {
-                "and": [
-                    {
-                        "Location": {
-                            "Operator1": "!=",
-                            "Value1": "intronic"
-                        }
-                    },
-                    {
-                        "or": [
-                            {
-                                "Identifier": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "."
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "and": [
-                                    {
-                                        "Oncominevariantclass": {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        }
-                                    },
-                                    {
-                                        "Exxon": {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        }
-                                    },
-                                    {
-                                        "Function": {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        }
-                                    },
-                                    {
-                                        "Location": {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            "SNVReadDepth": {
-                "and": [
-                    {
-                        "alleleFrequency": {
-                            "and": [
-                                {
-                                    "Operator1": "!=",
-                                    "Value1": "null"
-                                },
-                                {
-                                    "Operator1": ">=",
-                                    "Value1": "0.05"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "alternativeObservationCount": {
-                            "and": [
-                                {
-                                    "Operator1": "!=",
-                                    "Value1": "null"
-                                },
-                                {
-                                    "Operator1": ">=",
-                                    "Value1": "25"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            },
+            }
+        }
+    ],
+    "ProteinFilter": [
+        {
             "or": [
                 {
-                    "Identifier": {
-                        "and": [
-                            {
-                                "Operator1": "!=",
-                                "Value1": ""
-                            },
-                            {
-                                "Operator1": "!=",
-                                "Value1": "."
-                            }
-                        ]
+                    "protein": {
+                        "Operator1": "==",
+                        "Value1": ""
                     }
                 },
                 {
-                    "NonHotspot-TODO": {
-                        "and": [
-                            {
-                                "Gene": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "OncamineVariantClass": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "Exxon": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": "null"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "Function": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator2": "!=",
-                                            "Value2": "null"
-                                        }
-                                    ]
-                                }
-                            },
-                            {
-                                "Protein": {
-                                    "and": [
-                                        {
-                                            "Operator1": "!=",
-                                            "Value1": ""
-                                        },
-                                        {
-                                            "Operator2": "!=",
-                                            "Value2": "null"
-                                        }
-                                    ]
-                                }
+                    "protein": {
+                        "Operator1": "!=",
+                        "Value1": "p.(=)"
+                    }
+                }
+            ]
+        }
+    ],
+    "FunctionFilter": [
+        {
+            "or": [
+                {
+                    "function": {
+                        "Operator1": "==",
+                        "Value1": ""
+                    }
+                },
+                {
+                    "and": [
+                        {
+                            "function": {
+                                "Operator1": "!=",
+                                "Value1": "synonymous"
                             }
-                        ]
+                        },
+                        {
+                            "or": [
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "refallele"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "unknown"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "missense"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "nonsense"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "frameshiftinsertion"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "frameshiftdeletion"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "nonframeshiftinsertion"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "nonframeshiftdeletion"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "stoploss"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "frameshiftblocksubstitution"
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "contains",
+                                        "Value1": "nonframeshiftblocksubstitution"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "IntronicFilter": [
+        {
+            "and": [
+                {
+                    "location": {
+                        "Operator1": "!=",
+                        "Value1": "intronic"
                     }
                 },
                 {
                     "or": [
                         {
-                            "Oncominevariantclass": {
-                                "and": [
-                                    {
+                            "and": [
+                                {
+                                    "ID": {
+                                        "Operator1": "!=",
+                                        "Value1": ""
+                                    }
+                                },
+                                {
+                                    "ID": {
+                                        "Operator1": "!=",
+                                        "Value1": "."
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "and": [
+                                {
+                                    "oncomineVariantClass": {
+                                        "Operator1": "!=",
+                                        "Value1": ""
+                                    }
+                                },
+                                {
+                                    "exon": {
+                                        "Operator1": "!=",
+                                        "Value1": ""
+                                    }
+                                },
+                                {
+                                    "function": {
+                                        "Operator1": "!=",
+                                        "Value1": ""
+                                    }
+                                },
+                                {
+                                    "location": {
+                                        "Operator1": "!=",
+                                        "Value1": ""
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "IndelReadDepth": [
+        {
+            "and": [
+                {
+                    "AF": {
+                        "Operator1": "!=",
+                        "Value1": "null"
+                    }
+                },
+                {
+                    "AF": {
+                        "Operator1": ">=",
+                        "Value1": "0.05"
+                    }
+                },
+                {
+                    "or": [
+                        {
+                            "and": [
+                                {
+                                    "FAO": {
                                         "Operator1": "!=",
                                         "Value1": "null"
-                                    },
-                                    {
-                                        "or": [
-                                            {
-                                                "Operator1": "==",
-                                                "Value1": "deleterious"
-                                            },
-                                            {
-                                                "Operator1": "==",
-                                                "Value1": "hotspot"
-                                            }
-                                        ]
                                     }
-                                ]
+                                },
+                                {
+                                    "FAO": {
+                                        "Operator1": ">=",
+                                        "Value1": "25"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "and": [
+                                {
+                                    "AO": {
+                                        "Operator1": "!=",
+                                        "Value1": "null"
+                                    }
+                                },
+                                {
+                                    "AO": {
+                                        "Operator1": ">=",
+                                        "Value1": "25"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "OrFilterIdentifierDeleteriousHotspotFilters": [
+        {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "ID": {
+                                "Operator1": "!=",
+                                "Value1": ""
+                            }
+                        },
+                        {
+                            "ID": {
+                                "Operator1": "!=",
+                                "Value1": "."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "or": [
+                        {
+                            "oncomineVariantClass": {
+                                "Operator1": "==",
+                                "Value1": "deleterious"
+                            }
+                        },
+                        {
+                            "oncomineVariantClass": {
+                                "Operator1": "==",
+                                "Value1": "hotspot"
                             }
                         }
                     ]
