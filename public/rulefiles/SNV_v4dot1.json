@@ -97,6 +97,1086 @@
             ]
         }
     ],
+    "SnvGermlineRecurrentFilter4": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter5": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter6": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter7": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter8": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter9": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter10": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter11": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter12": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter13": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter14": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter15": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter16": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter17": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter18": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter19": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter20": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter21": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter22": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter23": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter24": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter25": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter26": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter27": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter28": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter29": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter30": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter31": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter32": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter33": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
+        }
+    ],
     "ProteinFilter": [
         {
             "or": [
