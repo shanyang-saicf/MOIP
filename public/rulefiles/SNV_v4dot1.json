@@ -25,12 +25,76 @@
             }
         }
     ],
-    "SnvGermlineRecurrentFilter": [
+    "SnvGermlineRecurrentFilter2": [
         {
-            "TODO": {
-                "Operator1": ">=",
-                "Value1": "?"
-            }
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "."
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "16082320"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "CCG"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter3": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM97131"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "209108317"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr2"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                }
+            ]
         }
     ],
     "ProteinFilter": [
