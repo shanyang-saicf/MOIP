@@ -1,10 +1,20 @@
 {
     "VariantFilter": [
         {
-            "SVTYPE": {
-                "Operator1": "==",
-                "Value1": "Indel?? TODO"
-            }
+            "or": [
+                {
+                    "TYPE": {
+                        "Operator1": "==",
+                        "Value1": "ins"
+                    }
+                },
+                {
+                    "TYPE": {
+                        "Operator1": "==",
+                        "Value1": "del"
+                    }
+                }
+            ]
         }
     ],
     "PassFilter": [

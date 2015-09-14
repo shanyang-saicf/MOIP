@@ -1,10 +1,20 @@
 {
     "VariantFilter": [
         {
-            "SVTYPE": {
-                "Operator1": "==",
-                "Value1": "SNV?? TODO"
-            }
+            "or": [
+                {
+                    "TYPE": {
+                        "Operator1": "==",
+                        "Value1": "mnp"
+                    }
+                },
+                {
+                    "TYPE": {
+                        "Operator1": "==",
+                        "Value1": "snp"
+                    }
+                }
+            ]
         }
     ],
     "PassFilter": [
