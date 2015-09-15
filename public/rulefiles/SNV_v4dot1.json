@@ -103,31 +103,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM28026"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "55593464"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr4"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "A"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "C"
                     }
                 }
             ]
@@ -139,31 +139,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "COSM94566"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "55964925"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr4"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "T"
+                        "Value1": "A"
                     }
                 }
             ]
@@ -175,31 +175,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM41742"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "106196819"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr4"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "T"
                     }
                 }
             ]
@@ -211,31 +211,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "."
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "112170746"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr5"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "AT"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "T"
+                        "Value1": "A"
                     }
                 }
             ]
@@ -247,31 +247,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM27993"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "112175651"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr5"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "A"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "G"
                     }
                 }
             ]
@@ -283,19 +283,55 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "."
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "112175951"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr5"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "G"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "GA"
+                    }
+                }
+            ]
+        }
+    ],
+    "SnvGermlineRecurrentFilter10": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM956"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "149449827"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr5"
                     }
                 },
                 {
@@ -313,67 +349,31 @@
             ]
         }
     ],
-    "SnvGermlineRecurrentFilter10": [
-        {
-            "and": [
-                {
-                    "ID": {
-                        "Operator1": "!=",
-                        "Value1": "."
-                    }
-                },
-                {
-                    "POS": {
-                        "Operator1": "!=",
-                        "Value1": "16082320"
-                    }
-                },
-                {
-                    "CHROM": {
-                        "Operator1": "!=",
-                        "Value1": "chr2"
-                    }
-                },
-                {
-                    "REF": {
-                        "Operator1": "!=",
-                        "Value1": "C"
-                    }
-                },
-                {
-                    "ALT": {
-                        "Operator1": "!=",
-                        "Value1": "CCG"
-                    }
-                }
-            ]
-        }
-    ],
     "SnvGermlineRecurrentFilter11": [
         {
             "and": [
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "COSM706"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "116339642"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr7"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
@@ -391,31 +391,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM710"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "116340262"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr7"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "A"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "G"
                     }
                 }
             ]
@@ -427,19 +427,19 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "COSM707"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "116411990"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr7"
                     }
                 },
                 {
@@ -469,25 +469,25 @@
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "139391975"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr9"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "GC"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "G"
                     }
                 }
             ]
@@ -499,19 +499,19 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "COSM33750"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "139399132"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr9"
                     }
                 },
                 {
@@ -541,25 +541,25 @@
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "89685288"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr10"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "T"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "TA"
                     }
                 }
             ]
@@ -571,19 +571,19 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "."
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "123247514"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr10"
                     }
                 },
                 {
@@ -595,7 +595,7 @@
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "T"
+                        "Value1": "CT"
                     }
                 }
             ]
@@ -613,25 +613,25 @@
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "123247514"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr10"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "CT"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "C"
                     }
                 }
             ]
@@ -643,25 +643,25 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "COSM42691"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "320606"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr11"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
@@ -679,55 +679,19 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM22499"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "108123551"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
-                    }
-                },
-                {
-                    "REF": {
-                        "Operator1": "!=",
-                        "Value1": "C"
-                    }
-                },
-                {
-                    "ALT": {
-                        "Operator1": "!=",
-                        "Value1": "CCG"
-                    }
-                }
-            ]
-        }
-    ],
-    "SnvGermlineRecurrentFilter21": [
-        {
-            "and": [
-                {
-                    "ID": {
-                        "Operator1": "!=",
-                        "Value1": "COSM97131"
-                    }
-                },
-                {
-                    "POS": {
-                        "Operator1": "!=",
-                        "Value1": "209108317"
-                    }
-                },
-                {
-                    "CHROM": {
-                        "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr11"
                     }
                 },
                 {
@@ -745,37 +709,73 @@
             ]
         }
     ],
+    "SnvGermlineRecurrentFilter21": [
+        {
+            "and": [
+                {
+                    "ID": {
+                        "Operator1": "!=",
+                        "Value1": "COSM21826"
+                    }
+                },
+                {
+                    "POS": {
+                        "Operator1": "!=",
+                        "Value1": "108138003"
+                    }
+                },
+                {
+                    "CHROM": {
+                        "Operator1": "!=",
+                        "Value1": "chr11"
+                    }
+                },
+                {
+                    "REF": {
+                        "Operator1": "!=",
+                        "Value1": "T"
+                    }
+                },
+                {
+                    "ALT": {
+                        "Operator1": "!=",
+                        "Value1": "C"
+                    }
+                }
+            ]
+        }
+    ],
     "SnvGermlineRecurrentFilter22": [
         {
             "and": [
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM41596"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "108175462"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr11"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "A"
                     }
                 }
             ]
@@ -787,25 +787,25 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "."
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "108175463"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr11"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "A"
                     }
                 },
                 {
@@ -823,19 +823,19 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM28040"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "28623587"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr13"
                     }
                 },
                 {
@@ -847,7 +847,7 @@
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "T"
                     }
                 }
             ]
@@ -859,25 +859,25 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "."
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "32972626"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr13"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "A"
                     }
                 },
                 {
@@ -895,31 +895,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM19758"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "68855966"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr16"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "A"
                     }
                 }
             ]
@@ -931,31 +931,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "."
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "7578212"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr17"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "GA"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "T"
+                        "Value1": "G"
                     }
                 }
             ]
@@ -973,25 +973,25 @@
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "7579471"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr17"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "GC"
                     }
                 }
             ]
@@ -1003,31 +1003,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "COSM250061"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "7579472"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr17"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "T"
+                        "Value1": "C"
                     }
                 }
             ]
@@ -1045,25 +1045,25 @@
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "29508455"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr17"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "TTA"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "T"
                     }
                 }
             ]
@@ -1075,31 +1075,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "."
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "29553538"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr17"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "T"
+                        "Value1": "A"
                     }
                 }
             ]
@@ -1111,19 +1111,19 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "."
+                        "Value1": "COSM21360"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "16082320"
+                        "Value1": "1223125"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr19"
                     }
                 },
                 {
@@ -1135,7 +1135,7 @@
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "CCG"
+                        "Value1": "G"
                     }
                 }
             ]
@@ -1147,31 +1147,31 @@
                 {
                     "ID": {
                         "Operator1": "!=",
-                        "Value1": "COSM97131"
+                        "Value1": "COSM116422"
                     }
                 },
                 {
                     "POS": {
                         "Operator1": "!=",
-                        "Value1": "209108317"
+                        "Value1": "36030940"
                     }
                 },
                 {
                     "CHROM": {
                         "Operator1": "!=",
-                        "Value1": "chr2"
+                        "Value1": "chr20"
                     }
                 },
                 {
                     "REF": {
                         "Operator1": "!=",
-                        "Value1": "C"
+                        "Value1": "G"
                     }
                 },
                 {
                     "ALT": {
                         "Operator1": "!=",
-                        "Value1": "T"
+                        "Value1": "C"
                     }
                 }
             ]
