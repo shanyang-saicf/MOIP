@@ -21,7 +21,7 @@ class VcfParser
           if @headers.headers.length == data.length
             parsedData = parseLineData(data, @headers)
             if parsedData["ID"].is_a? Array
-              parsedData = seperateComboData(parsedData)
+              parsedData = seperateComboData(parsedData, @headers.headers)
             end
             hashJson << parsedData
           end
@@ -50,9 +50,11 @@ class VcfParser
       return hashMap
   end
 
-  def seperateComboData(data)
-    length = data["ID"].length
+  def seperateComboData(data, headers)
+    format = {}
+    data
   end
+
 
 end
 

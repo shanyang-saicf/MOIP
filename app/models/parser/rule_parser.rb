@@ -20,7 +20,7 @@ class RuleParser
 
   def deep_transverse(object)
     if object.is_a? String
-      # p object
+
     else
       object.each { |key, value |
         if value.is_a? Hash

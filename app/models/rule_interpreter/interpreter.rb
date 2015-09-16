@@ -3,56 +3,6 @@ require 'and'
 
 class Interpreter
 
-  # ["SVTYPE == SNV",                                                                         aSentence
-  #  "FILTER == PASS",                                                                        aSentence
-  #  "TODO >= ?",                                                                             aSentence
-  #  {"or"=>["Protein == ",                                                                   Enumerable=>Array=>aSentence
-  #          "Protein != p.(=)"                                                               aSentence
-  #         ]
-  #  },                                                                                       RETURN << testArray
-  #  {"or"=>["Function == ",                                                                  Enumerable=>Array=>aSentence
-  #          {"and"=>["Function != synonymous",                                               Enumerable=>Array=>aSentence
-  #                   {"or"=>["Function contains refallele",                                  Enumerable=>Array=>aSentence
-  #                           "Function contains unknown",                                    aSentence
-  #                           "Function contains missense",                                   aSentence
-  #                           "Function contains nonsense",                                   aSentence
-  #                           "Function contains frameshiftinsertion",                        aSentence
-  #                           "Function contains frameshiftdeletion",                         aSentence
-  #                           "Function contains nonframeshiftinsertion",                     aSentence
-  #                           "Function contains nonframeshiftdeletion",                      aSentence
-  #                           "Function contains stoploss",                                   aSentence
-  #                           "Function contains frameshiftblocksubstitution",                aSentence
-  #                           "Function contains nonframeshiftblocksubstitution"              aSentence
-  #                          ]
-  #                   }                                                                       RETURN << enumArray
-  #                 ]
-  #          }                                                                                RETURN << enumArray
-  #         ]
-  # },                                                                                        RETURN << testArray
-  # {"and"=>["Location != intronic",                                                          Enumerable=>Array=>aSentence
-  #          {"or"=>[{"and"=>["ID != ",                                                       Enumerable=>Array=>Enumerable=>aSentence
-  #                           "ID != ."                                                       aSentence
-  #                          ]
-  #                  },                                                                       RETURN << enumArray
-  #                  {"and"=>["Oncominevariantclass != ",                                     Enumerable=>Array=>aSentence
-  #                           "Exxon != ", "Function != ",                                    aSentence
-  #                           "Location != "                                                  aSentence
-  #                          ]
-  #                  }                                                                        RETURN << enumArray
-  #                 ]
-  #          }                                                                                RETURN << enumArray
-  #         ]
-  # },                                                                                        RETURN << testArray
-  # {"and"=>["alleleFrequency != null",                                                       Enumerable=>Array=>aSentence
-  #          "alleleFrequency >= 0.05",                                                       aSentence
-  #          "alternativeObservationCount != null",                                           aSentence
-  #          "alternativeObservationCount >= 25"]},                                           aSentence
-  #          {"or"=>[{"and"=>["Identifier != ",                                               Enumerable=>Array=>Enumerable=>Array=>aSentence
-  #                           "Identifier != ."]},                                            aSentence
-  #                           {"and"=>["Oncominevariantclass != null",                        Enumerable=>Array=>aSentence
-  #                                    {"or"=>["Oncominevariantclass == deleterious",         Enumerable=>Array=>aSentence
-  #                                            "Oncominevariantclass == hotspot"]}]}]}]       aSentence RETURN << testArray
-
   def interpret(sentenceArray)
     testArray = []
     count = 0
@@ -164,8 +114,12 @@ class Interpreter
       when sentence.match("<")
         otherArray = sentenceSplitter(sentence, "<")
         LessThan.new(otherArray[0], otherArray[1])
+      when sentence.match("contains")
+        otherArray = sentenceSplitter(sentence, "contains")
+        Contains.new(otherArray[0], otherArray[1])
       else
-        p "Nothing found"
+        # logger.warn "Failed to find a matching logic statement"
+        false
     end
   end
 
