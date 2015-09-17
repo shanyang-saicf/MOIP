@@ -9,9 +9,9 @@ class Contains < Expression
     begin
       if (@expression1.is_a? String) && (@expression2.is_a? String)
         value = line.deep_find(@expression1)
-        return (value.nil? ? false : value.match(@expression2))
+        return (value.nil? ? false : value.include?(@expression2))
       else
-        return  @expression1.evaluate.match(@expression2.evaluate)
+        return  (@expression1.evaluate).include?(@expression2.evaluate)
       end
     rescue
       return nil

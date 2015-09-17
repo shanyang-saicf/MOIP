@@ -13,7 +13,7 @@ class And < Expression
       if @expression.all? { |x| x.is_a? Boolean }
         return applyLogic(@expression)
       else
-        applyLogic(@expression.collect { | x | x.evaluate(line) })
+        return applyLogic(@expression.collect { | x | x.evaluate(line) })
       end
     rescue
       return nil

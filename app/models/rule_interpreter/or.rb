@@ -14,7 +14,7 @@ class Or < Expression
       if @expression.all? { |x| x.is_a? Boolean }
         return applyLogic(@expression)
       else
-        applyLogic(@expression.collect { | x | x.evaluate(line) })
+        return applyLogic(@expression.collect { | x | x.evaluate(line) })
       end
     rescue
       return nil
@@ -22,7 +22,7 @@ class Or < Expression
   end
 
   def applyLogic(expression)
-    if expression.detect { |n| n == true}
+    if !expression.select { |n| n == true}.empty?
       return true
     else
       return false

@@ -20,7 +20,7 @@ class FileUploadController < ApplicationController
       expressionArray = Interpreter.new.interpret(RuleUpload.find(@rule).sentence)
       newHash = []
       expressionArray.each do | expression |
-        # p expression
+        p expression
         newHash = @expression.testEval(expression)
         # p newHash
         @expression.filterHash(newHash)

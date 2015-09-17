@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'expression'
+require_relative  '../../../app/models/rule_interpreter/or'
 
 RSpec.describe "RuleInterpreter::Expression", type: :model do
   before(:context) do
@@ -28,6 +29,13 @@ RSpec.describe "RuleInterpreter::Expression", type: :model do
 
   it "evaluate NotEquals" do
     expect(@expression.evaluate(Not.new(Equals.new("boy", "girl")), {"boy" => "girl"})).to be false
+  end
+
+  it "evaluate recussion for AND/OR" do
+    expect(@expression.evaluate(Or.new([Equals.new("boy", "girl"), Equals.new("boy", "boy")]), {"boy" => "girl"})).to be true
+    expect(@expression.evaluate(And.new([Equals.new("boy", "girl"), Equals.new("boy", "girl")]), {"boy" => "girl"})).to be true
+    expect(@expression.evaluate(Or.new([Equals.new("boy", "girl"), And.new([Equals.new("boy", "girl"), Equals.new("boy", "girl")])]), {"boy" => "girl"})).to be true
+    expect(@expression.evaluate(Or.new([Equals.new("boy", "girl"), And.new([Equals.new("boy", "girl"), Equals.new("boy", "girl"), Or.new([Equals.new("boy", "boy")])])]), {"boy" => "girl"})).to be true
   end
 
 

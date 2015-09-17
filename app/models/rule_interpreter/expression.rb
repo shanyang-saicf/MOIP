@@ -36,6 +36,7 @@ class Expression
   def testEval(expression)
     hash = []
     fileHashed.each do | line |
+      p expression.evaluate(line)
       if expression.evaluate(line)
          hash << line
       end
